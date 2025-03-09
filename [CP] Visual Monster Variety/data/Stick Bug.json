@@ -1,0 +1,28 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Stick Bug/texture_0,{{ModId}}_Stick Bug/texture_1",
+      "FromFile": "Textures/Stick Bug/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "Stick Bug": {
+          "Varieties": {
+            "{{ModId}}_Stick Bug/texture_0": {
+              "Sprite": "{{ModId}}_Stick Bug/texture_0"
+            },
+            "{{ModId}}_Stick Bug/texture_1": {
+              "Sprite": "{{ModId}}_Stick Bug/texture_1"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Stick Bug"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

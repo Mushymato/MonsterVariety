@@ -1,0 +1,25 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Frost Bat/texture_0",
+      "FromFile": "Textures/Frost Bat/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "Frost Bat": {
+          "Varieties": {
+            "{{ModId}}_Frost Bat/texture_0": {
+              "Sprite": "{{ModId}}_Frost Bat/texture_0"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Frost Bat"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

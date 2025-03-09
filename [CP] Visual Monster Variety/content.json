@@ -1,0 +1,125 @@
+{
+  "Format": "2.5.0",
+  "Changes": [
+    {
+      "Action": "Include",
+      "FromFile": "data/Armored Bug.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Assassin Bug.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Bat.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Big Slime.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Blue Squid.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Bug.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Carbon Ghost.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Duggy.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Dust Spirit.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Dwarvish Sentry.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Fly.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Frost Bat.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Ghost.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Green Slime.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Haunted Skull.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Iridium Crab.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Lava Crab.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Lava Lurk.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Magma Sparker.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Magma Sprite.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Metal Head.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Rock Crab.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Royal Serpent.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Serpent.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Skeleton.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Squid Kid.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Stick Bug.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Tiger Slime.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Truffle Crab.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Wilderness Golem.json"
+    }
+  ]
+}
