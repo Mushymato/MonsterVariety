@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using StardewValley.Extensions;
 using StardewValley.Monsters;
 
 namespace MonsterVariety;
@@ -57,33 +58,45 @@ internal static class ManageVariety
         return true;
     }
 
-    private static void ApplyMonsterVariety(Monster __instance)
+    private static void ApplyMonsterVariety(Monster monster)
     {
-        ModEntry.LogOnce($"Try ApplyMonsterVariety on '{__instance.Name}'");
-        if (!AssetManager.VarietyData.TryGetValue(__instance.Name, out MonsterVarietyData? data))
+        Type type = monster.GetType();
+        ModEntry.LogOnce($"Try ApplyMonsterVariety on '{monster.Name}' ({type.Namespace} : {type.Name})");
+        if (!AssetManager.VarietyData.TryGetValue(monster.Name, out MonsterVarietyData? data))
         {
             // special case Green Slime
-            if (__instance is not GreenSlime || !AssetManager.VarietyData.TryGetValue("Green Slime", out data))
+            if (monster is not GreenSlime || !AssetManager.VarietyData.TryGetValue("Green Slime", out data))
             {
                 return;
             }
         }
 
-        var varieties = data.Varieties;
-        if (__instance.isHardModeMonster.Value && data.DangerousVarieties.Count > 0)
-            varieties = data.DangerousVarieties;
+        string currTextureName = monster.Sprite.textureName.Value;
+        if (
+            !data.AlwaysOverride
+            && !currTextureName.StartsWithIgnoreCase("Characters\\Monsters\\")
+            && !currTextureName.StartsWithIgnoreCase("Characters/Monsters/")
+        )
+            return;
 
-        IEnumerable<VarietyData> validVariety = varieties.Values.Where(variety => IsValidVariety(__instance, variety));
-        int minPrecedence = validVariety.Min(variety => variety.Precedence);
-        List<VarietyData> validVarietyList = validVariety
-            .Where(variety => variety.Precedence == minPrecedence)
-            .ToList();
+        if (!monster.modData.TryGetValue(ModData_AppliedVariety, out string textureName))
+        {
+            var varieties = data.Varieties;
+            if (monster.isHardModeMonster.Value && data.DangerousVarieties.Count > 0)
+                varieties = data.DangerousVarieties;
 
-        string textureName = validVarietyList[Random.Shared.Next(validVarietyList.Count)].Sprite!;
-        __instance.modData[ModData_AppliedVariety] = textureName;
-        if (__instance.Sprite == null)
-            __instance.Sprite = new AnimatedSprite(textureName);
+            IEnumerable<VarietyData> validVariety = varieties.Values.Where(variety => IsValidVariety(monster, variety));
+            int minPrecedence = validVariety.Min(variety => variety.Precedence);
+            List<VarietyData> validVarietyList = validVariety
+                .Where(variety => variety.Precedence == minPrecedence)
+                .ToList();
+
+            textureName = validVarietyList[Random.Shared.Next(validVarietyList.Count)].Sprite!;
+            monster.modData[ModData_AppliedVariety] = textureName;
+        }
+        if (monster.Sprite == null)
+            monster.Sprite = new AnimatedSprite(textureName);
         else
-            __instance.Sprite.textureName.Value = textureName;
+            monster.Sprite.textureName.Value = textureName;
     }
 }

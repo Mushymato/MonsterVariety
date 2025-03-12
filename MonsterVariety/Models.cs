@@ -17,6 +17,7 @@ internal sealed class VarietyData
 
 internal sealed class MonsterVarietyData
 {
+    public bool AlwaysOverride { get; set; } = false;
     public Dictionary<string, VarietyData> Varieties { get; set; } = [];
     public Dictionary<string, VarietyData> DangerousVarieties { get; set; } = [];
 }
