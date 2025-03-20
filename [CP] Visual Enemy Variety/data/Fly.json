@@ -1,0 +1,58 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Fly/texture_0,{{ModId}}_Fly/texture_1,{{ModId}}_Fly/texture_2,{{ModId}}_Fly/texture_3,{{ModId}}_Fly/texture_4",
+      "FromFile": "Textures/Fly/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Fly_dangerous/texture_0,{{ModId}}_Fly_dangerous/texture_1,{{ModId}}_Fly_dangerous/texture_2",
+      "FromFile": "Textures/Fly Dangerous/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Fly": {
+          "Id": "{{ModId}}_Fly",
+          "MonsterName": "Fly",
+          "Varieties": {
+            "{{ModId}}_Fly/texture_0": {
+              "Sprite": "{{ModId}}_Fly/texture_0"
+            },
+            "{{ModId}}_Fly/texture_1": {
+              "Sprite": "{{ModId}}_Fly/texture_1"
+            },
+            "{{ModId}}_Fly/texture_2": {
+              "Sprite": "{{ModId}}_Fly/texture_2"
+            },
+            "{{ModId}}_Fly/texture_3": {
+              "Sprite": "{{ModId}}_Fly/texture_3"
+            },
+            "{{ModId}}_Fly/texture_4": {
+              "Sprite": "{{ModId}}_Fly/texture_4"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Fly"
+            }
+          },
+          "DangerousVarieties": {
+            "{{ModId}}_Fly_dangerous/texture_0": {
+              "Sprite": "{{ModId}}_Fly_dangerous/texture_0"
+            },
+            "{{ModId}}_Fly_dangerous/texture_1": {
+              "Sprite": "{{ModId}}_Fly_dangerous/texture_1"
+            },
+            "{{ModId}}_Fly_dangerous/texture_2": {
+              "Sprite": "{{ModId}}_Fly_dangerous/texture_2"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Fly_dangerous"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

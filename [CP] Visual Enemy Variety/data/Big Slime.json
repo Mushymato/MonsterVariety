@@ -1,0 +1,51 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Big Slime/texture_0,{{ModId}}_Big Slime/texture_1,{{ModId}}_Big Slime/texture_2,{{ModId}}_Big Slime/texture_3,{{ModId}}_Big Slime/texture_4,{{ModId}}_Big Slime/texture_5,{{ModId}}_Big Slime/texture_6,{{ModId}}_Big Slime/texture_7,{{ModId}}_Big Slime/texture_8",
+      "FromFile": "Textures/Big Slime/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Big Slime": {
+          "Id": "{{ModId}}_Big Slime",
+          "MonsterName": "Big Slime",
+          "Varieties": {
+            "{{ModId}}_Big Slime/texture_0": {
+              "Sprite": "{{ModId}}_Big Slime/texture_0"
+            },
+            "{{ModId}}_Big Slime/texture_1": {
+              "Sprite": "{{ModId}}_Big Slime/texture_1"
+            },
+            "{{ModId}}_Big Slime/texture_2": {
+              "Sprite": "{{ModId}}_Big Slime/texture_2"
+            },
+            "{{ModId}}_Big Slime/texture_3": {
+              "Sprite": "{{ModId}}_Big Slime/texture_3"
+            },
+            "{{ModId}}_Big Slime/texture_4": {
+              "Sprite": "{{ModId}}_Big Slime/texture_4"
+            },
+            "{{ModId}}_Big Slime/texture_5": {
+              "Sprite": "{{ModId}}_Big Slime/texture_5"
+            },
+            "{{ModId}}_Big Slime/texture_6": {
+              "Sprite": "{{ModId}}_Big Slime/texture_6"
+            },
+            "{{ModId}}_Big Slime/texture_7": {
+              "Sprite": "{{ModId}}_Big Slime/texture_7"
+            },
+            "{{ModId}}_Big Slime/texture_8": {
+              "Sprite": "{{ModId}}_Big Slime/texture_8"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Big Slime"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -11,10 +11,13 @@ Note: `[CP] Visual Monster Variety` lacks the actual assets since they don't bel
 Target `mushymato.MonsterVariety/Data` and add an entry like this:
 
 ```json
-// Key is internal name of the monster.
+// The key should be unique for your mod, to achieve compatibility.
+// MonsterName is the internal name of the monster, this field is mandatory.
 // If you aren't sure about the name, look for 'Try ApplyMonsterVariety on ' in the trace logs.
-// It's possible for mod to change this name.
-"Armored Bug": {
+// It's possible for other mods to change this name.
+"{{ModId}}_Armored Bug": {
+  "Id": "{{ModId}}_Armored Bug",
+  "MonsterName": "Armored Bug",
   "Varieties": {
     "{{ModId}}_Armored Bug/texture_0": {
       // Load the sprite to this target
@@ -39,3 +42,4 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
 }
 ```
 
+`mushymato.MonsterVariety/Data` is actually a list, two mods adding varieties to the same monster will appear as 2 different entries so as long as they use unique id. These entries will be merged before used to check what variants should apply.

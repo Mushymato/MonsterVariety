@@ -1,0 +1,51 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Assassin Bug/texture_0,{{ModId}}_Assassin Bug/texture_1,{{ModId}}_Assassin Bug/texture_2,{{ModId}}_Assassin Bug/texture_3,{{ModId}}_Assassin Bug/texture_4,{{ModId}}_Assassin Bug/texture_5,{{ModId}}_Assassin Bug/texture_6,{{ModId}}_Assassin Bug/texture_7,{{ModId}}_Assassin Bug/texture_8",
+      "FromFile": "Textures/Assassin Bug/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Assassin Bug": {
+          "Id": "{{ModId}}_Assassin Bug",
+          "MonsterName": "Assassin Bug",
+          "Varieties": {
+            "{{ModId}}_Assassin Bug/texture_0": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_0"
+            },
+            "{{ModId}}_Assassin Bug/texture_1": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_1"
+            },
+            "{{ModId}}_Assassin Bug/texture_2": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_2"
+            },
+            "{{ModId}}_Assassin Bug/texture_3": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_3"
+            },
+            "{{ModId}}_Assassin Bug/texture_4": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_4"
+            },
+            "{{ModId}}_Assassin Bug/texture_5": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_5"
+            },
+            "{{ModId}}_Assassin Bug/texture_6": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_6"
+            },
+            "{{ModId}}_Assassin Bug/texture_7": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_7"
+            },
+            "{{ModId}}_Assassin Bug/texture_8": {
+              "Sprite": "{{ModId}}_Assassin Bug/texture_8"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Assassin Bug"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

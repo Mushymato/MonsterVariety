@@ -1,0 +1,45 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Ghost/texture_0,{{ModId}}_Ghost/texture_1,{{ModId}}_Ghost/texture_2,{{ModId}}_Ghost/texture_3,{{ModId}}_Ghost/texture_4,{{ModId}}_Ghost/texture_5,{{ModId}}_Ghost/texture_6",
+      "FromFile": "Textures/Ghost/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Ghost": {
+          "Id": "{{ModId}}_Ghost",
+          "MonsterName": "Ghost",
+          "Varieties": {
+            "{{ModId}}_Ghost/texture_0": {
+              "Sprite": "{{ModId}}_Ghost/texture_0"
+            },
+            "{{ModId}}_Ghost/texture_1": {
+              "Sprite": "{{ModId}}_Ghost/texture_1"
+            },
+            "{{ModId}}_Ghost/texture_2": {
+              "Sprite": "{{ModId}}_Ghost/texture_2"
+            },
+            "{{ModId}}_Ghost/texture_3": {
+              "Sprite": "{{ModId}}_Ghost/texture_3"
+            },
+            "{{ModId}}_Ghost/texture_4": {
+              "Sprite": "{{ModId}}_Ghost/texture_4"
+            },
+            "{{ModId}}_Ghost/texture_5": {
+              "Sprite": "{{ModId}}_Ghost/texture_5"
+            },
+            "{{ModId}}_Ghost/texture_6": {
+              "Sprite": "{{ModId}}_Ghost/texture_6"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Ghost"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

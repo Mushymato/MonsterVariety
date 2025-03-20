@@ -1,0 +1,88 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Bug/texture_0,{{ModId}}_Bug/texture_1,{{ModId}}_Bug/texture_2,{{ModId}}_Bug/texture_3,{{ModId}}_Bug/texture_4,{{ModId}}_Bug/texture_5,{{ModId}}_Bug/texture_6,{{ModId}}_Bug/texture_7,{{ModId}}_Bug/texture_8",
+      "FromFile": "Textures/Bug/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Bug_dangerous/texture_0,{{ModId}}_Bug_dangerous/texture_1,{{ModId}}_Bug_dangerous/texture_2,{{ModId}}_Bug_dangerous/texture_3,{{ModId}}_Bug_dangerous/texture_4,{{ModId}}_Bug_dangerous/texture_5,{{ModId}}_Bug_dangerous/texture_6,{{ModId}}_Bug_dangerous/texture_7,{{ModId}}_Bug_dangerous/texture_8",
+      "FromFile": "Textures/Bug Dangerous/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Bug": {
+          "Id": "{{ModId}}_Bug",
+          "MonsterName": "Bug",
+          "Varieties": {
+            "{{ModId}}_Bug/texture_0": {
+              "Sprite": "{{ModId}}_Bug/texture_0"
+            },
+            "{{ModId}}_Bug/texture_1": {
+              "Sprite": "{{ModId}}_Bug/texture_1"
+            },
+            "{{ModId}}_Bug/texture_2": {
+              "Sprite": "{{ModId}}_Bug/texture_2"
+            },
+            "{{ModId}}_Bug/texture_3": {
+              "Sprite": "{{ModId}}_Bug/texture_3"
+            },
+            "{{ModId}}_Bug/texture_4": {
+              "Sprite": "{{ModId}}_Bug/texture_4"
+            },
+            "{{ModId}}_Bug/texture_5": {
+              "Sprite": "{{ModId}}_Bug/texture_5"
+            },
+            "{{ModId}}_Bug/texture_6": {
+              "Sprite": "{{ModId}}_Bug/texture_6"
+            },
+            "{{ModId}}_Bug/texture_7": {
+              "Sprite": "{{ModId}}_Bug/texture_7"
+            },
+            "{{ModId}}_Bug/texture_8": {
+              "Sprite": "{{ModId}}_Bug/texture_8"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Bug"
+            }
+          },
+          "DangerousVarieties": {
+            "{{ModId}}_Bug_dangerous/texture_0": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_0"
+            },
+            "{{ModId}}_Bug_dangerous/texture_1": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_1"
+            },
+            "{{ModId}}_Bug_dangerous/texture_2": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_2"
+            },
+            "{{ModId}}_Bug_dangerous/texture_3": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_3"
+            },
+            "{{ModId}}_Bug_dangerous/texture_4": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_4"
+            },
+            "{{ModId}}_Bug_dangerous/texture_5": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_5"
+            },
+            "{{ModId}}_Bug_dangerous/texture_6": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_6"
+            },
+            "{{ModId}}_Bug_dangerous/texture_7": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_7"
+            },
+            "{{ModId}}_Bug_dangerous/texture_8": {
+              "Sprite": "{{ModId}}_Bug_dangerous/texture_8"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Bug_dangerous"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Squid Kid/texture_0,{{ModId}}_Squid Kid/texture_1,{{ModId}}_Squid Kid/texture_2,{{ModId}}_Squid Kid/texture_3,{{ModId}}_Squid Kid/texture_4,{{ModId}}_Squid Kid/texture_5,{{ModId}}_Squid Kid/texture_6,{{ModId}}_Squid Kid/texture_7,{{ModId}}_Squid Kid/texture_8",
+      "FromFile": "Textures/Squid Kid/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Squid Kid_dangerous/texture_0,{{ModId}}_Squid Kid_dangerous/texture_1,{{ModId}}_Squid Kid_dangerous/texture_2,{{ModId}}_Squid Kid_dangerous/texture_3,{{ModId}}_Squid Kid_dangerous/texture_4,{{ModId}}_Squid Kid_dangerous/texture_5,{{ModId}}_Squid Kid_dangerous/texture_6,{{ModId}}_Squid Kid_dangerous/texture_7,{{ModId}}_Squid Kid_dangerous/texture_8,{{ModId}}_Squid Kid_dangerous/texture_9",
+      "FromFile": "Textures/Squid Kid Dangerous/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Squid Kid": {
+          "Id": "{{ModId}}_Squid Kid",
+          "MonsterName": "Squid Kid",
+          "Varieties": {
+            "{{ModId}}_Squid Kid/texture_0": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_0"
+            },
+            "{{ModId}}_Squid Kid/texture_1": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_1"
+            },
+            "{{ModId}}_Squid Kid/texture_2": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_2"
+            },
+            "{{ModId}}_Squid Kid/texture_3": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_3"
+            },
+            "{{ModId}}_Squid Kid/texture_4": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_4"
+            },
+            "{{ModId}}_Squid Kid/texture_5": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_5"
+            },
+            "{{ModId}}_Squid Kid/texture_6": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_6"
+            },
+            "{{ModId}}_Squid Kid/texture_7": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_7"
+            },
+            "{{ModId}}_Squid Kid/texture_8": {
+              "Sprite": "{{ModId}}_Squid Kid/texture_8"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Squid Kid"
+            }
+          },
+          "DangerousVarieties": {
+            "{{ModId}}_Squid Kid_dangerous/texture_0": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_0"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_1": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_1"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_2": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_2"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_3": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_3"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_4": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_4"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_5": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_5"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_6": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_6"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_7": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_7"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_8": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_8"
+            },
+            "{{ModId}}_Squid Kid_dangerous/texture_9": {
+              "Sprite": "{{ModId}}_Squid Kid_dangerous/texture_9"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Squid Kid_dangerous"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Iridium Crab/texture_0,{{ModId}}_Iridium Crab/texture_1,{{ModId}}_Iridium Crab/texture_2,{{ModId}}_Iridium Crab/texture_3",
+      "FromFile": "Textures/Iridium Crab/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Iridium Crab": {
+          "Id": "{{ModId}}_Iridium Crab",
+          "MonsterName": "Iridium Crab",
+          "Varieties": {
+            "{{ModId}}_Iridium Crab/texture_0": {
+              "Sprite": "{{ModId}}_Iridium Crab/texture_0"
+            },
+            "{{ModId}}_Iridium Crab/texture_1": {
+              "Sprite": "{{ModId}}_Iridium Crab/texture_1"
+            },
+            "{{ModId}}_Iridium Crab/texture_2": {
+              "Sprite": "{{ModId}}_Iridium Crab/texture_2"
+            },
+            "{{ModId}}_Iridium Crab/texture_3": {
+              "Sprite": "{{ModId}}_Iridium Crab/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Iridium Crab"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

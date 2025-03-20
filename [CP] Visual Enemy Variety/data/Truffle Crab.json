@@ -1,0 +1,36 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Truffle Crab/texture_0,{{ModId}}_Truffle Crab/texture_1,{{ModId}}_Truffle Crab/texture_2,{{ModId}}_Truffle Crab/texture_3",
+      "FromFile": "Textures/Truffle Crab/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Truffle Crab": {
+          "Id": "{{ModId}}_Truffle Crab",
+          "MonsterName": "Truffle Crab",
+          "Varieties": {
+            "{{ModId}}_Truffle Crab/texture_0": {
+              "Sprite": "{{ModId}}_Truffle Crab/texture_0"
+            },
+            "{{ModId}}_Truffle Crab/texture_1": {
+              "Sprite": "{{ModId}}_Truffle Crab/texture_1"
+            },
+            "{{ModId}}_Truffle Crab/texture_2": {
+              "Sprite": "{{ModId}}_Truffle Crab/texture_2"
+            },
+            "{{ModId}}_Truffle Crab/texture_3": {
+              "Sprite": "{{ModId}}_Truffle Crab/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Truffle Crab"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Carbon Ghost/texture_0,{{ModId}}_Carbon Ghost/texture_1,{{ModId}}_Carbon Ghost/texture_2,{{ModId}}_Carbon Ghost/texture_3",
+      "FromFile": "Textures/Carbon Ghost/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Carbon Ghost": {
+          "Id": "{{ModId}}_Carbon Ghost",
+          "MonsterName": "Carbon Ghost",
+          "Varieties": {
+            "{{ModId}}_Carbon Ghost/texture_0": {
+              "Sprite": "{{ModId}}_Carbon Ghost/texture_0"
+            },
+            "{{ModId}}_Carbon Ghost/texture_1": {
+              "Sprite": "{{ModId}}_Carbon Ghost/texture_1"
+            },
+            "{{ModId}}_Carbon Ghost/texture_2": {
+              "Sprite": "{{ModId}}_Carbon Ghost/texture_2"
+            },
+            "{{ModId}}_Carbon Ghost/texture_3": {
+              "Sprite": "{{ModId}}_Carbon Ghost/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Carbon Ghost"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

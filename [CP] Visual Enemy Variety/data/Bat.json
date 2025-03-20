@@ -1,0 +1,70 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Bat/texture_0,{{ModId}}_Bat/texture_1,{{ModId}}_Bat/texture_2,{{ModId}}_Bat/texture_3,{{ModId}}_Bat/texture_4,{{ModId}}_Bat/texture_5",
+      "FromFile": "Textures/Bat/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Bat_dangerous/texture_0,{{ModId}}_Bat_dangerous/texture_1,{{ModId}}_Bat_dangerous/texture_2,{{ModId}}_Bat_dangerous/texture_3,{{ModId}}_Bat_dangerous/texture_4,{{ModId}}_Bat_dangerous/texture_5",
+      "FromFile": "Textures/Bat Dangerous/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Bat": {
+          "Id": "{{ModId}}_Bat",
+          "MonsterName": "Bat",
+          "Varieties": {
+            "{{ModId}}_Bat/texture_0": {
+              "Sprite": "{{ModId}}_Bat/texture_0"
+            },
+            "{{ModId}}_Bat/texture_1": {
+              "Sprite": "{{ModId}}_Bat/texture_1"
+            },
+            "{{ModId}}_Bat/texture_2": {
+              "Sprite": "{{ModId}}_Bat/texture_2"
+            },
+            "{{ModId}}_Bat/texture_3": {
+              "Sprite": "{{ModId}}_Bat/texture_3"
+            },
+            "{{ModId}}_Bat/texture_4": {
+              "Sprite": "{{ModId}}_Bat/texture_4"
+            },
+            "{{ModId}}_Bat/texture_5": {
+              "Sprite": "{{ModId}}_Bat/texture_5"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Bat"
+            }
+          },
+          "DangerousVarieties": {
+            "{{ModId}}_Bat_dangerous/texture_0": {
+              "Sprite": "{{ModId}}_Bat_dangerous/texture_0"
+            },
+            "{{ModId}}_Bat_dangerous/texture_1": {
+              "Sprite": "{{ModId}}_Bat_dangerous/texture_1"
+            },
+            "{{ModId}}_Bat_dangerous/texture_2": {
+              "Sprite": "{{ModId}}_Bat_dangerous/texture_2"
+            },
+            "{{ModId}}_Bat_dangerous/texture_3": {
+              "Sprite": "{{ModId}}_Bat_dangerous/texture_3"
+            },
+            "{{ModId}}_Bat_dangerous/texture_4": {
+              "Sprite": "{{ModId}}_Bat_dangerous/texture_4"
+            },
+            "{{ModId}}_Bat_dangerous/texture_5": {
+              "Sprite": "{{ModId}}_Bat_dangerous/texture_5"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Bat_dangerous"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

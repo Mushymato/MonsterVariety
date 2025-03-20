@@ -1,0 +1,45 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Serpent/texture_0,{{ModId}}_Serpent/texture_1,{{ModId}}_Serpent/texture_2,{{ModId}}_Serpent/texture_3,{{ModId}}_Serpent/texture_4,{{ModId}}_Serpent/texture_5,{{ModId}}_Serpent/texture_6",
+      "FromFile": "Textures/Serpent/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Serpent": {
+          "Id": "{{ModId}}_Serpent",
+          "MonsterName": "Serpent",
+          "Varieties": {
+            "{{ModId}}_Serpent/texture_0": {
+              "Sprite": "{{ModId}}_Serpent/texture_0"
+            },
+            "{{ModId}}_Serpent/texture_1": {
+              "Sprite": "{{ModId}}_Serpent/texture_1"
+            },
+            "{{ModId}}_Serpent/texture_2": {
+              "Sprite": "{{ModId}}_Serpent/texture_2"
+            },
+            "{{ModId}}_Serpent/texture_3": {
+              "Sprite": "{{ModId}}_Serpent/texture_3"
+            },
+            "{{ModId}}_Serpent/texture_4": {
+              "Sprite": "{{ModId}}_Serpent/texture_4"
+            },
+            "{{ModId}}_Serpent/texture_5": {
+              "Sprite": "{{ModId}}_Serpent/texture_5"
+            },
+            "{{ModId}}_Serpent/texture_6": {
+              "Sprite": "{{ModId}}_Serpent/texture_6"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Serpent"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

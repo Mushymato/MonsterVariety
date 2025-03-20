@@ -1,0 +1,48 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Royal Serpent/texture_0,{{ModId}}_Royal Serpent/texture_1,{{ModId}}_Royal Serpent/texture_2,{{ModId}}_Royal Serpent/texture_3,{{ModId}}_Royal Serpent/texture_4,{{ModId}}_Royal Serpent/texture_5,{{ModId}}_Royal Serpent/texture_6,{{ModId}}_Royal Serpent/texture_7",
+      "FromFile": "Textures/Royal Serpent/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Royal Serpent": {
+          "Id": "{{ModId}}_Royal Serpent",
+          "MonsterName": "Royal Serpent",
+          "Varieties": {
+            "{{ModId}}_Royal Serpent/texture_0": {
+              "Sprite": "{{ModId}}_Royal Serpent/texture_0"
+            },
+            "{{ModId}}_Royal Serpent/texture_1": {
+              "Sprite": "{{ModId}}_Royal Serpent/texture_1"
+            },
+            "{{ModId}}_Royal Serpent/texture_2": {
+              "Sprite": "{{ModId}}_Royal Serpent/texture_2"
+            },
+            "{{ModId}}_Royal Serpent/texture_3": {
+              "Sprite": "{{ModId}}_Royal Serpent/texture_3"
+            },
+            "{{ModId}}_Royal Serpent/texture_4": {
+              "Sprite": "{{ModId}}_Royal Serpent/texture_4"
+            },
+            "{{ModId}}_Royal Serpent/texture_5": {
+              "Sprite": "{{ModId}}_Royal Serpent/texture_5"
+            },
+            "{{ModId}}_Royal Serpent/texture_6": {
+              "Sprite": "{{ModId}}_Royal Serpent/texture_6"
+            },
+            "{{ModId}}_Royal Serpent/texture_7": {
+              "Sprite": "{{ModId}}_Royal Serpent/texture_7"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Royal Serpent"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

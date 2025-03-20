@@ -1,0 +1,33 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Lava Lurk/texture_0,{{ModId}}_Lava Lurk/texture_1,{{ModId}}_Lava Lurk/texture_2",
+      "FromFile": "Textures/Lava Lurk/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Lava Lurk": {
+          "Id": "{{ModId}}_Lava Lurk",
+          "MonsterName": "Lava Lurk",
+          "Varieties": {
+            "{{ModId}}_Lava Lurk/texture_0": {
+              "Sprite": "{{ModId}}_Lava Lurk/texture_0"
+            },
+            "{{ModId}}_Lava Lurk/texture_1": {
+              "Sprite": "{{ModId}}_Lava Lurk/texture_1"
+            },
+            "{{ModId}}_Lava Lurk/texture_2": {
+              "Sprite": "{{ModId}}_Lava Lurk/texture_2"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Lava Lurk"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

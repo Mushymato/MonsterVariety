@@ -1,0 +1,58 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Rock Crab/texture_0,{{ModId}}_Rock Crab/texture_1,{{ModId}}_Rock Crab/texture_2,{{ModId}}_Rock Crab/texture_3",
+      "FromFile": "Textures/Rock Crab/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Rock Crab_dangerous/texture_0,{{ModId}}_Rock Crab_dangerous/texture_1,{{ModId}}_Rock Crab_dangerous/texture_2,{{ModId}}_Rock Crab_dangerous/texture_3",
+      "FromFile": "Textures/Rock Crab Dangerous/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Rock Crab": {
+          "Id": "{{ModId}}_Rock Crab",
+          "MonsterName": "Rock Crab",
+          "Varieties": {
+            "{{ModId}}_Rock Crab/texture_0": {
+              "Sprite": "{{ModId}}_Rock Crab/texture_0"
+            },
+            "{{ModId}}_Rock Crab/texture_1": {
+              "Sprite": "{{ModId}}_Rock Crab/texture_1"
+            },
+            "{{ModId}}_Rock Crab/texture_2": {
+              "Sprite": "{{ModId}}_Rock Crab/texture_2"
+            },
+            "{{ModId}}_Rock Crab/texture_3": {
+              "Sprite": "{{ModId}}_Rock Crab/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Rock Crab"
+            }
+          },
+          "DangerousVarieties": {
+            "{{ModId}}_Rock Crab_dangerous/texture_0": {
+              "Sprite": "{{ModId}}_Rock Crab_dangerous/texture_0"
+            },
+            "{{ModId}}_Rock Crab_dangerous/texture_1": {
+              "Sprite": "{{ModId}}_Rock Crab_dangerous/texture_1"
+            },
+            "{{ModId}}_Rock Crab_dangerous/texture_2": {
+              "Sprite": "{{ModId}}_Rock Crab_dangerous/texture_2"
+            },
+            "{{ModId}}_Rock Crab_dangerous/texture_3": {
+              "Sprite": "{{ModId}}_Rock Crab_dangerous/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Rock Crab_dangerous"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Blue Squid/texture_0,{{ModId}}_Blue Squid/texture_1,{{ModId}}_Blue Squid/texture_2,{{ModId}}_Blue Squid/texture_3",
+      "FromFile": "Textures/Blue Squid/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Blue Squid": {
+          "Id": "{{ModId}}_Blue Squid",
+          "MonsterName": "Blue Squid",
+          "Varieties": {
+            "{{ModId}}_Blue Squid/texture_0": {
+              "Sprite": "{{ModId}}_Blue Squid/texture_0"
+            },
+            "{{ModId}}_Blue Squid/texture_1": {
+              "Sprite": "{{ModId}}_Blue Squid/texture_1"
+            },
+            "{{ModId}}_Blue Squid/texture_2": {
+              "Sprite": "{{ModId}}_Blue Squid/texture_2"
+            },
+            "{{ModId}}_Blue Squid/texture_3": {
+              "Sprite": "{{ModId}}_Blue Squid/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Blue Squid"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

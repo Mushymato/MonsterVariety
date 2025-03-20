@@ -1,0 +1,39 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Wilderness Golem/texture_0,{{ModId}}_Wilderness Golem/texture_1,{{ModId}}_Wilderness Golem/texture_2,{{ModId}}_Wilderness Golem/texture_3,{{ModId}}_Wilderness Golem/texture_4",
+      "FromFile": "Textures/Wilderness Golem/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Wilderness Golem": {
+          "Id": "{{ModId}}_Wilderness Golem",
+          "MonsterName": "Wilderness Golem",
+          "Varieties": {
+            "{{ModId}}_Wilderness Golem/texture_0": {
+              "Sprite": "{{ModId}}_Wilderness Golem/texture_0"
+            },
+            "{{ModId}}_Wilderness Golem/texture_1": {
+              "Sprite": "{{ModId}}_Wilderness Golem/texture_1"
+            },
+            "{{ModId}}_Wilderness Golem/texture_2": {
+              "Sprite": "{{ModId}}_Wilderness Golem/texture_2"
+            },
+            "{{ModId}}_Wilderness Golem/texture_3": {
+              "Sprite": "{{ModId}}_Wilderness Golem/texture_3"
+            },
+            "{{ModId}}_Wilderness Golem/texture_4": {
+              "Sprite": "{{ModId}}_Wilderness Golem/texture_4"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Wilderness Golem"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

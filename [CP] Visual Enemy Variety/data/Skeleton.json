@@ -1,0 +1,90 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Skeleton/texture_0,{{ModId}}_Skeleton/texture_1,{{ModId}}_Skeleton/texture_10,{{ModId}}_Skeleton/texture_11,{{ModId}}_Skeleton/texture_12,{{ModId}}_Skeleton/texture_13,{{ModId}}_Skeleton/texture_14,{{ModId}}_Skeleton/texture_15,{{ModId}}_Skeleton/texture_16,{{ModId}}_Skeleton/texture_17,{{ModId}}_Skeleton/texture_18,{{ModId}}_Skeleton/texture_19,{{ModId}}_Skeleton/texture_2,{{ModId}}_Skeleton/texture_20,{{ModId}}_Skeleton/texture_21,{{ModId}}_Skeleton/texture_3,{{ModId}}_Skeleton/texture_4,{{ModId}}_Skeleton/texture_5,{{ModId}}_Skeleton/texture_6,{{ModId}}_Skeleton/texture_7,{{ModId}}_Skeleton/texture_8,{{ModId}}_Skeleton/texture_9",
+      "FromFile": "Textures/Skeleton/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Skeleton": {
+          "Id": "{{ModId}}_Skeleton",
+          "MonsterName": "Skeleton",
+          "Varieties": {
+            "{{ModId}}_Skeleton/texture_0": {
+              "Sprite": "{{ModId}}_Skeleton/texture_0"
+            },
+            "{{ModId}}_Skeleton/texture_1": {
+              "Sprite": "{{ModId}}_Skeleton/texture_1"
+            },
+            "{{ModId}}_Skeleton/texture_10": {
+              "Sprite": "{{ModId}}_Skeleton/texture_10"
+            },
+            "{{ModId}}_Skeleton/texture_11": {
+              "Sprite": "{{ModId}}_Skeleton/texture_11"
+            },
+            "{{ModId}}_Skeleton/texture_12": {
+              "Sprite": "{{ModId}}_Skeleton/texture_12"
+            },
+            "{{ModId}}_Skeleton/texture_13": {
+              "Sprite": "{{ModId}}_Skeleton/texture_13"
+            },
+            "{{ModId}}_Skeleton/texture_14": {
+              "Sprite": "{{ModId}}_Skeleton/texture_14"
+            },
+            "{{ModId}}_Skeleton/texture_15": {
+              "Sprite": "{{ModId}}_Skeleton/texture_15"
+            },
+            "{{ModId}}_Skeleton/texture_16": {
+              "Sprite": "{{ModId}}_Skeleton/texture_16"
+            },
+            "{{ModId}}_Skeleton/texture_17": {
+              "Sprite": "{{ModId}}_Skeleton/texture_17"
+            },
+            "{{ModId}}_Skeleton/texture_18": {
+              "Sprite": "{{ModId}}_Skeleton/texture_18"
+            },
+            "{{ModId}}_Skeleton/texture_19": {
+              "Sprite": "{{ModId}}_Skeleton/texture_19"
+            },
+            "{{ModId}}_Skeleton/texture_2": {
+              "Sprite": "{{ModId}}_Skeleton/texture_2"
+            },
+            "{{ModId}}_Skeleton/texture_20": {
+              "Sprite": "{{ModId}}_Skeleton/texture_20"
+            },
+            "{{ModId}}_Skeleton/texture_21": {
+              "Sprite": "{{ModId}}_Skeleton/texture_21"
+            },
+            "{{ModId}}_Skeleton/texture_3": {
+              "Sprite": "{{ModId}}_Skeleton/texture_3"
+            },
+            "{{ModId}}_Skeleton/texture_4": {
+              "Sprite": "{{ModId}}_Skeleton/texture_4"
+            },
+            "{{ModId}}_Skeleton/texture_5": {
+              "Sprite": "{{ModId}}_Skeleton/texture_5"
+            },
+            "{{ModId}}_Skeleton/texture_6": {
+              "Sprite": "{{ModId}}_Skeleton/texture_6"
+            },
+            "{{ModId}}_Skeleton/texture_7": {
+              "Sprite": "{{ModId}}_Skeleton/texture_7"
+            },
+            "{{ModId}}_Skeleton/texture_8": {
+              "Sprite": "{{ModId}}_Skeleton/texture_8"
+            },
+            "{{ModId}}_Skeleton/texture_9": {
+              "Sprite": "{{ModId}}_Skeleton/texture_9"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Skeleton"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Dwarvish Sentry/texture_0,{{ModId}}_Dwarvish Sentry/texture_1,{{ModId}}_Dwarvish Sentry/texture_2,{{ModId}}_Dwarvish Sentry/texture_3",
+      "FromFile": "Textures/Dwarvish Sentry/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Dwarvish Sentry": {
+          "Id": "{{ModId}}_Dwarvish Sentry",
+          "MonsterName": "Dwarvish Sentry",
+          "Varieties": {
+            "{{ModId}}_Dwarvish Sentry/texture_0": {
+              "Sprite": "{{ModId}}_Dwarvish Sentry/texture_0"
+            },
+            "{{ModId}}_Dwarvish Sentry/texture_1": {
+              "Sprite": "{{ModId}}_Dwarvish Sentry/texture_1"
+            },
+            "{{ModId}}_Dwarvish Sentry/texture_2": {
+              "Sprite": "{{ModId}}_Dwarvish Sentry/texture_2"
+            },
+            "{{ModId}}_Dwarvish Sentry/texture_3": {
+              "Sprite": "{{ModId}}_Dwarvish Sentry/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Dwarvish Sentry"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

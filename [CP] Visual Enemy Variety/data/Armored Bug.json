@@ -1,0 +1,88 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Armored Bug/texture_0,{{ModId}}_Armored Bug/texture_1,{{ModId}}_Armored Bug/texture_2,{{ModId}}_Armored Bug/texture_3,{{ModId}}_Armored Bug/texture_4,{{ModId}}_Armored Bug/texture_5,{{ModId}}_Armored Bug/texture_6,{{ModId}}_Armored Bug/texture_7,{{ModId}}_Armored Bug/texture_8",
+      "FromFile": "Textures/Armored Bug/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Armored Bug_dangerous/texture_0,{{ModId}}_Armored Bug_dangerous/texture_1,{{ModId}}_Armored Bug_dangerous/texture_2,{{ModId}}_Armored Bug_dangerous/texture_3,{{ModId}}_Armored Bug_dangerous/texture_4,{{ModId}}_Armored Bug_dangerous/texture_5,{{ModId}}_Armored Bug_dangerous/texture_6,{{ModId}}_Armored Bug_dangerous/texture_7,{{ModId}}_Armored Bug_dangerous/texture_8",
+      "FromFile": "Textures/Armored Bug Dangerous/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Armored Bug": {
+          "Id": "{{ModId}}_Armored Bug",
+          "MonsterName": "Armored Bug",
+          "Varieties": {
+            "{{ModId}}_Armored Bug/texture_0": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_0"
+            },
+            "{{ModId}}_Armored Bug/texture_1": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_1"
+            },
+            "{{ModId}}_Armored Bug/texture_2": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_2"
+            },
+            "{{ModId}}_Armored Bug/texture_3": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_3"
+            },
+            "{{ModId}}_Armored Bug/texture_4": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_4"
+            },
+            "{{ModId}}_Armored Bug/texture_5": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_5"
+            },
+            "{{ModId}}_Armored Bug/texture_6": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_6"
+            },
+            "{{ModId}}_Armored Bug/texture_7": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_7"
+            },
+            "{{ModId}}_Armored Bug/texture_8": {
+              "Sprite": "{{ModId}}_Armored Bug/texture_8"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Armored Bug"
+            }
+          },
+          "DangerousVarieties": {
+            "{{ModId}}_Armored Bug_dangerous/texture_0": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_0"
+            },
+            "{{ModId}}_Armored Bug_dangerous/texture_1": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_1"
+            },
+            "{{ModId}}_Armored Bug_dangerous/texture_2": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_2"
+            },
+            "{{ModId}}_Armored Bug_dangerous/texture_3": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_3"
+            },
+            "{{ModId}}_Armored Bug_dangerous/texture_4": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_4"
+            },
+            "{{ModId}}_Armored Bug_dangerous/texture_5": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_5"
+            },
+            "{{ModId}}_Armored Bug_dangerous/texture_6": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_6"
+            },
+            "{{ModId}}_Armored Bug_dangerous/texture_7": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_7"
+            },
+            "{{ModId}}_Armored Bug_dangerous/texture_8": {
+              "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_8"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Armored Bug_dangerous"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

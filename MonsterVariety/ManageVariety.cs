@@ -42,8 +42,10 @@ internal static class ManageVariety
             ApplyMonsterVariety(monster);
     }
 
-    private static bool IsValidVariety(Monster monster, VarietyData variety)
+    private static bool IsValidVariety(Monster monster, VarietyData variety, bool onlyAlwaysOverride)
     {
+        if (onlyAlwaysOverride && !variety.AlwaysOverride)
+            return false;
         if (variety.Sprite == null)
             return false;
         if (!Game1.content.DoesAssetExist<Texture2D>(variety.Sprite))
@@ -72,12 +74,9 @@ internal static class ManageVariety
         }
 
         string currTextureName = monster.Sprite.textureName.Value;
-        if (
-            !data.AlwaysOverride
-            && !currTextureName.StartsWithIgnoreCase("Characters\\Monsters\\")
-            && !currTextureName.StartsWithIgnoreCase("Characters/Monsters/")
-        )
-            return;
+        bool onlyAlwaysOverride =
+            !currTextureName.StartsWithIgnoreCase("Characters\\Monsters\\")
+            && !currTextureName.StartsWithIgnoreCase("Characters/Monsters/");
 
         if (!monster.modData.TryGetValue(ModData_AppliedVariety, out string textureName))
         {
@@ -85,7 +84,9 @@ internal static class ManageVariety
             if (monster.isHardModeMonster.Value && data.DangerousVarieties.Count > 0)
                 varieties = data.DangerousVarieties;
 
-            IEnumerable<VarietyData> validVariety = varieties.Values.Where(variety => IsValidVariety(monster, variety));
+            IEnumerable<VarietyData> validVariety = varieties.Values.Where(variety =>
+                IsValidVariety(monster, variety, onlyAlwaysOverride)
+            );
             int minPrecedence = validVariety.Min(variety => variety.Precedence);
             List<VarietyData> validVarietyList = validVariety
                 .Where(variety => variety.Precedence == minPrecedence)

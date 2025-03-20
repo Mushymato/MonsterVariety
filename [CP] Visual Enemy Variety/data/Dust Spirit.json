@@ -1,0 +1,90 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Dust Spirit/texture_0,{{ModId}}_Dust Spirit/texture_1,{{ModId}}_Dust Spirit/texture_10,{{ModId}}_Dust Spirit/texture_11,{{ModId}}_Dust Spirit/texture_12,{{ModId}}_Dust Spirit/texture_13,{{ModId}}_Dust Spirit/texture_14,{{ModId}}_Dust Spirit/texture_15,{{ModId}}_Dust Spirit/texture_16,{{ModId}}_Dust Spirit/texture_17,{{ModId}}_Dust Spirit/texture_18,{{ModId}}_Dust Spirit/texture_19,{{ModId}}_Dust Spirit/texture_2,{{ModId}}_Dust Spirit/texture_20,{{ModId}}_Dust Spirit/texture_21,{{ModId}}_Dust Spirit/texture_3,{{ModId}}_Dust Spirit/texture_4,{{ModId}}_Dust Spirit/texture_5,{{ModId}}_Dust Spirit/texture_6,{{ModId}}_Dust Spirit/texture_7,{{ModId}}_Dust Spirit/texture_8,{{ModId}}_Dust Spirit/texture_9",
+      "FromFile": "Textures/Dust Spirit/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Dust Spirit": {
+          "Id": "{{ModId}}_Dust Spirit",
+          "MonsterName": "Dust Spirit",
+          "Varieties": {
+            "{{ModId}}_Dust Spirit/texture_0": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_0"
+            },
+            "{{ModId}}_Dust Spirit/texture_1": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_1"
+            },
+            "{{ModId}}_Dust Spirit/texture_10": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_10"
+            },
+            "{{ModId}}_Dust Spirit/texture_11": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_11"
+            },
+            "{{ModId}}_Dust Spirit/texture_12": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_12"
+            },
+            "{{ModId}}_Dust Spirit/texture_13": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_13"
+            },
+            "{{ModId}}_Dust Spirit/texture_14": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_14"
+            },
+            "{{ModId}}_Dust Spirit/texture_15": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_15"
+            },
+            "{{ModId}}_Dust Spirit/texture_16": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_16"
+            },
+            "{{ModId}}_Dust Spirit/texture_17": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_17"
+            },
+            "{{ModId}}_Dust Spirit/texture_18": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_18"
+            },
+            "{{ModId}}_Dust Spirit/texture_19": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_19"
+            },
+            "{{ModId}}_Dust Spirit/texture_2": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_2"
+            },
+            "{{ModId}}_Dust Spirit/texture_20": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_20"
+            },
+            "{{ModId}}_Dust Spirit/texture_21": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_21"
+            },
+            "{{ModId}}_Dust Spirit/texture_3": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_3"
+            },
+            "{{ModId}}_Dust Spirit/texture_4": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_4"
+            },
+            "{{ModId}}_Dust Spirit/texture_5": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_5"
+            },
+            "{{ModId}}_Dust Spirit/texture_6": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_6"
+            },
+            "{{ModId}}_Dust Spirit/texture_7": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_7"
+            },
+            "{{ModId}}_Dust Spirit/texture_8": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_8"
+            },
+            "{{ModId}}_Dust Spirit/texture_9": {
+              "Sprite": "{{ModId}}_Dust Spirit/texture_9"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Dust Spirit"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

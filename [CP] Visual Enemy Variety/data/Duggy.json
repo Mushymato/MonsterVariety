@@ -1,0 +1,69 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Duggy/texture_0,{{ModId}}_Duggy/texture_1,{{ModId}}_Duggy/texture_10,{{ModId}}_Duggy/texture_11,{{ModId}}_Duggy/texture_12,{{ModId}}_Duggy/texture_13,{{ModId}}_Duggy/texture_14,{{ModId}}_Duggy/texture_2,{{ModId}}_Duggy/texture_3,{{ModId}}_Duggy/texture_4,{{ModId}}_Duggy/texture_5,{{ModId}}_Duggy/texture_6,{{ModId}}_Duggy/texture_7,{{ModId}}_Duggy/texture_8,{{ModId}}_Duggy/texture_9",
+      "FromFile": "Textures/Duggy/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Duggy": {
+          "Id": "{{ModId}}_Duggy",
+          "MonsterName": "Duggy",
+          "Varieties": {
+            "{{ModId}}_Duggy/texture_0": {
+              "Sprite": "{{ModId}}_Duggy/texture_0"
+            },
+            "{{ModId}}_Duggy/texture_1": {
+              "Sprite": "{{ModId}}_Duggy/texture_1"
+            },
+            "{{ModId}}_Duggy/texture_10": {
+              "Sprite": "{{ModId}}_Duggy/texture_10"
+            },
+            "{{ModId}}_Duggy/texture_11": {
+              "Sprite": "{{ModId}}_Duggy/texture_11"
+            },
+            "{{ModId}}_Duggy/texture_12": {
+              "Sprite": "{{ModId}}_Duggy/texture_12"
+            },
+            "{{ModId}}_Duggy/texture_13": {
+              "Sprite": "{{ModId}}_Duggy/texture_13"
+            },
+            "{{ModId}}_Duggy/texture_14": {
+              "Sprite": "{{ModId}}_Duggy/texture_14"
+            },
+            "{{ModId}}_Duggy/texture_2": {
+              "Sprite": "{{ModId}}_Duggy/texture_2"
+            },
+            "{{ModId}}_Duggy/texture_3": {
+              "Sprite": "{{ModId}}_Duggy/texture_3"
+            },
+            "{{ModId}}_Duggy/texture_4": {
+              "Sprite": "{{ModId}}_Duggy/texture_4"
+            },
+            "{{ModId}}_Duggy/texture_5": {
+              "Sprite": "{{ModId}}_Duggy/texture_5"
+            },
+            "{{ModId}}_Duggy/texture_6": {
+              "Sprite": "{{ModId}}_Duggy/texture_6"
+            },
+            "{{ModId}}_Duggy/texture_7": {
+              "Sprite": "{{ModId}}_Duggy/texture_7"
+            },
+            "{{ModId}}_Duggy/texture_8": {
+              "Sprite": "{{ModId}}_Duggy/texture_8"
+            },
+            "{{ModId}}_Duggy/texture_9": {
+              "Sprite": "{{ModId}}_Duggy/texture_9"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Duggy"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

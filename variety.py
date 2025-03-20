@@ -9,13 +9,19 @@ OUTPUT_DATA = ".output/data"
 
 
 def make_include_edits(monster, normal, dangerous):
-    targets = [f"{{{{ModId}}}}_{monster}/{x}" for x in normal]
-    dangerous_targets = [f"{{{{ModId}}}}_{monster}_dangerous/{x}" for x in dangerous]
+    modId_monster = f"{{{{ModId}}}}_{monster}"
+    targets = [f"{modId_monster}/{x}" for x in normal]
+    dangerous_targets = [f"{modId_monster}_dangerous/{x}" for x in dangerous]
     include_changes = []
     editdata = {
         "Action": "EditData",
         "Target": "mushymato.MonsterVariety/Data",
-        "Entries": {monster: {}},
+        "Entries": {
+            modId_monster: {
+                "Id": modId_monster,
+                "MonsterName": monster,
+            },
+        },
     }
     if targets:
         include_changes.append(
@@ -25,10 +31,10 @@ def make_include_edits(monster, normal, dangerous):
                 "FromFile": f"Textures/{monster}/{{{{TargetWithoutPath}}}}.png",
             }
         )
-        editdata["Entries"][monster]["Varieties"] = {
+        editdata["Entries"][modId_monster]["Varieties"] = {
             target: {"Sprite": target} for target in targets
         }
-        editdata["Entries"][monster]["Varieties"]["Default"] = {
+        editdata["Entries"][modId_monster]["Varieties"]["Default"] = {
             "Sprite": f"Characters/Monsters/{monster}"
         }
     if dangerous_targets:
@@ -39,17 +45,18 @@ def make_include_edits(monster, normal, dangerous):
                 "FromFile": f"Textures/{monster} Dangerous/{{{{TargetWithoutPath}}}}.png",
             }
         )
-        editdata["Entries"][monster]["DangerousVarieties"] = {
+        editdata["Entries"][modId_monster]["DangerousVarieties"] = {
             target: {"Sprite": target} for target in dangerous_targets
         }
-        editdata["Entries"][monster]["DangerousVarieties"]["Default"] = {
-            "Sprite": f"Characters/Monsters/{monster}_dangerous"
+        editdata["Entries"][modId_monster]["DangerousVarieties"]["Default"] = {
+            "Sprite": f"Characters/Monsters/{monster}_dangerous",
         }
     include_changes.append(editdata)
     return include_changes
 
 
 def make_cp_edits(at_path):
+    print(at_path)
     at_root = Path(at_path)
     textures = at_root / "Textures"
 

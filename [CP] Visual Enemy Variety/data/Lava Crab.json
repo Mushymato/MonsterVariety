@@ -1,0 +1,58 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Lava Crab/texture_0,{{ModId}}_Lava Crab/texture_1,{{ModId}}_Lava Crab/texture_2,{{ModId}}_Lava Crab/texture_3",
+      "FromFile": "Textures/Lava Crab/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Lava Crab_dangerous/texture_0,{{ModId}}_Lava Crab_dangerous/texture_1,{{ModId}}_Lava Crab_dangerous/texture_2,{{ModId}}_Lava Crab_dangerous/texture_3",
+      "FromFile": "Textures/Lava Crab Dangerous/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Lava Crab": {
+          "Id": "{{ModId}}_Lava Crab",
+          "MonsterName": "Lava Crab",
+          "Varieties": {
+            "{{ModId}}_Lava Crab/texture_0": {
+              "Sprite": "{{ModId}}_Lava Crab/texture_0"
+            },
+            "{{ModId}}_Lava Crab/texture_1": {
+              "Sprite": "{{ModId}}_Lava Crab/texture_1"
+            },
+            "{{ModId}}_Lava Crab/texture_2": {
+              "Sprite": "{{ModId}}_Lava Crab/texture_2"
+            },
+            "{{ModId}}_Lava Crab/texture_3": {
+              "Sprite": "{{ModId}}_Lava Crab/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Lava Crab"
+            }
+          },
+          "DangerousVarieties": {
+            "{{ModId}}_Lava Crab_dangerous/texture_0": {
+              "Sprite": "{{ModId}}_Lava Crab_dangerous/texture_0"
+            },
+            "{{ModId}}_Lava Crab_dangerous/texture_1": {
+              "Sprite": "{{ModId}}_Lava Crab_dangerous/texture_1"
+            },
+            "{{ModId}}_Lava Crab_dangerous/texture_2": {
+              "Sprite": "{{ModId}}_Lava Crab_dangerous/texture_2"
+            },
+            "{{ModId}}_Lava Crab_dangerous/texture_3": {
+              "Sprite": "{{ModId}}_Lava Crab_dangerous/texture_3"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Lava Crab_dangerous"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

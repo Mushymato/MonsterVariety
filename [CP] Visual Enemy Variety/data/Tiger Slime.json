@@ -1,0 +1,45 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Tiger Slime/texture_0,{{ModId}}_Tiger Slime/texture_1,{{ModId}}_Tiger Slime/texture_2,{{ModId}}_Tiger Slime/texture_3,{{ModId}}_Tiger Slime/texture_4,{{ModId}}_Tiger Slime/texture_5,{{ModId}}_Tiger Slime/texture_6",
+      "FromFile": "Textures/Tiger Slime/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Tiger Slime": {
+          "Id": "{{ModId}}_Tiger Slime",
+          "MonsterName": "Tiger Slime",
+          "Varieties": {
+            "{{ModId}}_Tiger Slime/texture_0": {
+              "Sprite": "{{ModId}}_Tiger Slime/texture_0"
+            },
+            "{{ModId}}_Tiger Slime/texture_1": {
+              "Sprite": "{{ModId}}_Tiger Slime/texture_1"
+            },
+            "{{ModId}}_Tiger Slime/texture_2": {
+              "Sprite": "{{ModId}}_Tiger Slime/texture_2"
+            },
+            "{{ModId}}_Tiger Slime/texture_3": {
+              "Sprite": "{{ModId}}_Tiger Slime/texture_3"
+            },
+            "{{ModId}}_Tiger Slime/texture_4": {
+              "Sprite": "{{ModId}}_Tiger Slime/texture_4"
+            },
+            "{{ModId}}_Tiger Slime/texture_5": {
+              "Sprite": "{{ModId}}_Tiger Slime/texture_5"
+            },
+            "{{ModId}}_Tiger Slime/texture_6": {
+              "Sprite": "{{ModId}}_Tiger Slime/texture_6"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Tiger Slime"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

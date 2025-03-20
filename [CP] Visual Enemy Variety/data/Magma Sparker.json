@@ -1,0 +1,75 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Magma Sparker/texture_0,{{ModId}}_Magma Sparker/texture_1,{{ModId}}_Magma Sparker/texture_10,{{ModId}}_Magma Sparker/texture_11,{{ModId}}_Magma Sparker/texture_12,{{ModId}}_Magma Sparker/texture_13,{{ModId}}_Magma Sparker/texture_14,{{ModId}}_Magma Sparker/texture_15,{{ModId}}_Magma Sparker/texture_16,{{ModId}}_Magma Sparker/texture_2,{{ModId}}_Magma Sparker/texture_3,{{ModId}}_Magma Sparker/texture_4,{{ModId}}_Magma Sparker/texture_5,{{ModId}}_Magma Sparker/texture_6,{{ModId}}_Magma Sparker/texture_7,{{ModId}}_Magma Sparker/texture_8,{{ModId}}_Magma Sparker/texture_9",
+      "FromFile": "Textures/Magma Sparker/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Magma Sparker": {
+          "Id": "{{ModId}}_Magma Sparker",
+          "MonsterName": "Magma Sparker",
+          "Varieties": {
+            "{{ModId}}_Magma Sparker/texture_0": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_0"
+            },
+            "{{ModId}}_Magma Sparker/texture_1": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_1"
+            },
+            "{{ModId}}_Magma Sparker/texture_10": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_10"
+            },
+            "{{ModId}}_Magma Sparker/texture_11": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_11"
+            },
+            "{{ModId}}_Magma Sparker/texture_12": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_12"
+            },
+            "{{ModId}}_Magma Sparker/texture_13": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_13"
+            },
+            "{{ModId}}_Magma Sparker/texture_14": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_14"
+            },
+            "{{ModId}}_Magma Sparker/texture_15": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_15"
+            },
+            "{{ModId}}_Magma Sparker/texture_16": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_16"
+            },
+            "{{ModId}}_Magma Sparker/texture_2": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_2"
+            },
+            "{{ModId}}_Magma Sparker/texture_3": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_3"
+            },
+            "{{ModId}}_Magma Sparker/texture_4": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_4"
+            },
+            "{{ModId}}_Magma Sparker/texture_5": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_5"
+            },
+            "{{ModId}}_Magma Sparker/texture_6": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_6"
+            },
+            "{{ModId}}_Magma Sparker/texture_7": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_7"
+            },
+            "{{ModId}}_Magma Sparker/texture_8": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_8"
+            },
+            "{{ModId}}_Magma Sparker/texture_9": {
+              "Sprite": "{{ModId}}_Magma Sparker/texture_9"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Magma Sparker"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
