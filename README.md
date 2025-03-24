@@ -11,12 +11,12 @@ Note: `[CP] Visual Monster Variety` lacks the actual assets since they don't bel
 Target `mushymato.MonsterVariety/Data` and add an entry like this:
 
 ```json
-// The key should be unique for your mod, to achieve compatibility.
-// MonsterName is the internal name of the monster, this field is mandatory.
-// If you aren't sure about the name, look for 'Try ApplyMonsterVariety on ' in the trace logs.
-// It's possible for other mods to change this name.
+// The Key/Id should be unique for your mod, to achieve compatibility.
 "{{ModId}}_Armored Bug": {
   "Id": "{{ModId}}_Armored Bug",
+  // Internal name of the monster, mandatory.
+  // If you aren't sure about the name, look for "Try ApplyMonsterVariety on <monster name>" in the trace logs.
+  // It's possible for other mods to change this name.
   "MonsterName": "Armored Bug",
   "Varieties": {
     "{{ModId}}_Armored Bug/texture_0": {
@@ -27,7 +27,8 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
       "Season": null, // Current season, respects the location
       "Precedence": 0, // Order to check in, lower is earlier
     },
-    // This entry is the vanilla appearance, it's optional if you don't want to include it in the mix
+    // This entry is the vanilla appearance, it's treated the samesame as any other variety.
+    // You do not have to include it if you wish to completely override this monster's sprites.
     "Default": {
       "Sprite": "Characters/Monsters/Armored Bug"
     }
