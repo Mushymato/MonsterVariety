@@ -19,6 +19,8 @@ internal static class ManageVariety
 
     private static void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
     {
+        foreach (NPC npc in Game1.currentLocation.characters)
+            OnMonsterAdded(npc);
         Game1.currentLocation.characters.OnValueAdded += OnMonsterAdded;
     }
 
@@ -29,9 +31,7 @@ internal static class ManageVariety
         if (e.NewLocation != null)
         {
             foreach (NPC npc in e.NewLocation.characters)
-            {
                 OnMonsterAdded(npc);
-            }
             e.NewLocation.characters.OnValueAdded += OnMonsterAdded;
         }
     }
