@@ -42,6 +42,15 @@ internal static class ManageVariety
             ApplyMonsterVariety(monster);
     }
 
+    private static bool IsVanillaSprite(string currTextureName)
+    {
+        string[] nameParts = currTextureName.Split(['\\', '/']);
+        return nameParts.Length == 3
+            && nameParts[0].EqualsIgnoreCase("Characters")
+            && nameParts[1].EqualsIgnoreCase("Monsters")
+            && (ModEntry.VanillaCharacterMonster?.Contains(nameParts[2].ToLower()) ?? false);
+    }
+
     private static bool IsValidVariety(Monster monster, VarietyData variety, bool onlyAlwaysOverride)
     {
         if (onlyAlwaysOverride && !variety.AlwaysOverride)
@@ -63,7 +72,9 @@ internal static class ManageVariety
     private static void ApplyMonsterVariety(Monster monster)
     {
         Type type = monster.GetType();
-        ModEntry.LogOnce($"Try ApplyMonsterVariety on '{monster.Name}' ({type.Namespace} : {type.Name})");
+        ModEntry.LogOnce(
+            $"Try ApplyMonsterVariety on '{monster.Name}' ({type.Namespace} : {type.Name} T:{monster.Sprite.textureName.Value})"
+        );
         if (!AssetManager.VarietyData.TryGetValue(monster.Name, out MonsterVarietyData? data))
         {
             // special case Green Slime
@@ -73,13 +84,10 @@ internal static class ManageVariety
             }
         }
 
-        string currTextureName = monster.Sprite.textureName.Value;
-        bool onlyAlwaysOverride =
-            !currTextureName.StartsWithIgnoreCase("Characters\\Monsters\\")
-            && !currTextureName.StartsWithIgnoreCase("Characters/Monsters/");
-
         if (!monster.modData.TryGetValue(ModData_AppliedVariety, out string textureName))
         {
+            bool onlyAlwaysOverride =
+                type.Namespace != "StardewValley.Monsters" || !IsVanillaSprite(monster.Sprite.textureName.Value);
             var varieties = data.Varieties;
             if (monster.isHardModeMonster.Value && data.DangerousVarieties.Count > 0)
                 varieties = data.DangerousVarieties;
@@ -87,13 +95,19 @@ internal static class ManageVariety
             IEnumerable<VarietyData> validVariety = varieties.Values.Where(variety =>
                 IsValidVariety(monster, variety, onlyAlwaysOverride)
             );
-            int minPrecedence = validVariety.Min(variety => variety.Precedence);
-            List<VarietyData> validVarietyList = validVariety
-                .Where(variety => variety.Precedence == minPrecedence)
-                .ToList();
-
-            textureName = validVarietyList[Random.Shared.Next(validVarietyList.Count)].Sprite!;
-            monster.modData[ModData_AppliedVariety] = textureName;
+            if (validVariety.Any())
+            {
+                int minPrecedence = validVariety.Min(variety => variety.Precedence);
+                List<VarietyData> validVarietyList = validVariety
+                    .Where(variety => variety.Precedence == minPrecedence)
+                    .ToList();
+                textureName = validVarietyList[Random.Shared.Next(validVarietyList.Count)].Sprite!;
+                monster.modData[ModData_AppliedVariety] = textureName;
+            }
+            else
+            {
+                return;
+            }
         }
         if (monster.Sprite == null)
             monster.Sprite = new AnimatedSprite(textureName);

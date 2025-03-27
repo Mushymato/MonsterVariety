@@ -12,12 +12,15 @@ public class ModEntry : Mod
     private static IMonitor? mon;
     internal static string ModId { get; private set; } = null!;
 
+    internal static HashSet<string>? VanillaCharacterMonster;
+
     public override void Entry(IModHelper helper)
     {
         mon = Monitor;
         ModId = ModManifest.UniqueID;
         AssetManager.Register(helper);
         ManageVariety.Apply(helper);
+        VanillaCharacterMonster = helper.Data.ReadJsonFile<HashSet<string>>("assets/vanilla_character_monsters.json");
     }
 
     /// <summary>SMAPI static monitor Log wrapper</summary>
