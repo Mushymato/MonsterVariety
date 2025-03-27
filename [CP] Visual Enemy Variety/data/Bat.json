@@ -17,6 +17,12 @@
         "{{ModId}}_Bat": {
           "Id": "{{ModId}}_Bat",
           "MonsterName": "Bat",
+          "SharedExtraDrops": {
+            "{{ModId}}_BatMeat": {
+              "Id": "{{ModId}}_BatMeat",
+              "ItemId": "(O)684"
+            }
+          },
           "Varieties": {
             "{{ModId}}_Bat/texture_0": {
               "Sprite": "{{ModId}}_Bat/texture_0"

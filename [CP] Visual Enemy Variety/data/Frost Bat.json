@@ -2,8 +2,13 @@
   "Changes": [
     {
       "Action": "Load",
-      "Target": "{{ModId}}_Frost Bat/texture_0",
+      "Target": "{{ModId}}_Frost Bat/texture_0,{{ModId}}_Frost Bat/texture_1,{{ModId}}_Frost Bat/texture_2,{{ModId}}_Frost Bat/texture_3,{{ModId}}_Frost Bat/texture_4,{{ModId}}_Frost Bat/texture_5",
       "FromFile": "Textures/Frost Bat/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Frost Bat_dangerous/texture_0,{{ModId}}_Frost Bat_dangerous/texture_1,{{ModId}}_Frost Bat_dangerous/texture_2,{{ModId}}_Frost Bat_dangerous/texture_3,{{ModId}}_Frost Bat_dangerous/texture_4",
+      "FromFile": "Textures/Frost Bat Dangerous/{{TargetWithoutPath}}.png"
     },
     {
       "Action": "EditData",
@@ -16,8 +21,43 @@
             "{{ModId}}_Frost Bat/texture_0": {
               "Sprite": "{{ModId}}_Frost Bat/texture_0"
             },
+            "{{ModId}}_Frost Bat/texture_1": {
+              "Sprite": "{{ModId}}_Frost Bat/texture_1"
+            },
+            "{{ModId}}_Frost Bat/texture_2": {
+              "Sprite": "{{ModId}}_Frost Bat/texture_2"
+            },
+            "{{ModId}}_Frost Bat/texture_3": {
+              "Sprite": "{{ModId}}_Frost Bat/texture_3"
+            },
+            "{{ModId}}_Frost Bat/texture_4": {
+              "Sprite": "{{ModId}}_Frost Bat/texture_4"
+            },
+            "{{ModId}}_Frost Bat/texture_5": {
+              "Sprite": "{{ModId}}_Frost Bat/texture_5"
+            },
             "Default": {
               "Sprite": "Characters/Monsters/Frost Bat"
+            }
+          },
+          "DangerousVarieties": {
+            "{{ModId}}_Frost Bat_dangerous/texture_0": {
+              "Sprite": "{{ModId}}_Frost Bat_dangerous/texture_0"
+            },
+            "{{ModId}}_Frost Bat_dangerous/texture_1": {
+              "Sprite": "{{ModId}}_Frost Bat_dangerous/texture_1"
+            },
+            "{{ModId}}_Frost Bat_dangerous/texture_2": {
+              "Sprite": "{{ModId}}_Frost Bat_dangerous/texture_2"
+            },
+            "{{ModId}}_Frost Bat_dangerous/texture_3": {
+              "Sprite": "{{ModId}}_Frost Bat_dangerous/texture_3"
+            },
+            "{{ModId}}_Frost Bat_dangerous/texture_4": {
+              "Sprite": "{{ModId}}_Frost Bat_dangerous/texture_4"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Frost Bat_dangerous"
             }
           }
         }

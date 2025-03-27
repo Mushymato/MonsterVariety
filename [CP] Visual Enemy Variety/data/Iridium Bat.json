@@ -1,0 +1,39 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Iridium Bat/texture_0,{{ModId}}_Iridium Bat/texture_1,{{ModId}}_Iridium Bat/texture_2,{{ModId}}_Iridium Bat/texture_3,{{ModId}}_Iridium Bat/texture_4",
+      "FromFile": "Textures/Iridium Bat/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Iridium Bat": {
+          "Id": "{{ModId}}_Iridium Bat",
+          "MonsterName": "Iridium Bat",
+          "Varieties": {
+            "{{ModId}}_Iridium Bat/texture_0": {
+              "Sprite": "{{ModId}}_Iridium Bat/texture_0"
+            },
+            "{{ModId}}_Iridium Bat/texture_1": {
+              "Sprite": "{{ModId}}_Iridium Bat/texture_1"
+            },
+            "{{ModId}}_Iridium Bat/texture_2": {
+              "Sprite": "{{ModId}}_Iridium Bat/texture_2"
+            },
+            "{{ModId}}_Iridium Bat/texture_3": {
+              "Sprite": "{{ModId}}_Iridium Bat/texture_3"
+            },
+            "{{ModId}}_Iridium Bat/texture_4": {
+              "Sprite": "{{ModId}}_Iridium Bat/texture_4"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Iridium Bat"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

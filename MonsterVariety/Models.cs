@@ -1,6 +1,7 @@
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using StardewValley.GameData;
 
 namespace MonsterVariety;
 
@@ -15,6 +16,8 @@ internal sealed class VarietyData
     public string? Sprite { get; set; }
 
     public int Precedence { get; set; } = 0;
+
+    public Dictionary<string, GenericSpawnItemDataWithCondition>? ExtraDrops { get; set; } = null;
 }
 
 internal sealed class MonsterVarietyData
@@ -22,7 +25,9 @@ internal sealed class MonsterVarietyData
     public string? Id { get; set; } = null;
     public string? MonsterName { get; set; } = null;
     public Dictionary<string, VarietyData> Varieties { get; set; } = [];
+    public Dictionary<string, GenericSpawnItemDataWithCondition>? SharedExtraDrops { get; set; } = null;
     public Dictionary<string, VarietyData> DangerousVarieties { get; set; } = [];
+    public Dictionary<string, GenericSpawnItemDataWithCondition>? DangerousSharedExtraDrops { get; set; } = null;
 
     internal void Merge(MonsterVarietyData other)
     {
@@ -33,6 +38,18 @@ internal sealed class MonsterVarietyData
         foreach (var kv in other.DangerousVarieties)
         {
             DangerousVarieties[kv.Key] = kv.Value;
+        }
+        if (other.SharedExtraDrops != null)
+        {
+            SharedExtraDrops ??= [];
+            foreach (var kv in other.SharedExtraDrops)
+                SharedExtraDrops[kv.Key] = kv.Value;
+        }
+        if (other.DangerousSharedExtraDrops != null)
+        {
+            DangerousSharedExtraDrops ??= [];
+            foreach (var kv in other.DangerousSharedExtraDrops)
+                DangerousSharedExtraDrops[kv.Key] = kv.Value;
         }
     }
 }

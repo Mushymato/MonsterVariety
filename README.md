@@ -26,6 +26,13 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
       "Condition": null, // Game State Query
       "Season": null, // Current season, respects the location
       "Precedence": 0, // Order to check in, lower is earlier
+      "ExtraDrops": {
+        // extra drop items, these are item queries with Condition https://stardewvalleywiki.com/Modding:Item_queries
+        "{{ModId}}_ExtraMeat1": {
+          "Id": "{{ModId}}_ExtraMeat1",
+          "ItemId": "(O)684"
+        }
+      }
     },
     // This entry is the vanilla appearance, it's treated the samesame as any other variety.
     // You do not have to include it if you wish to completely override this monster's sprites.
@@ -34,12 +41,27 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
     }
     // add more varieties as desired
   },
+  // shared extra drop, applies to all monsters with this name
+  "SharedExtraDrops": {
+    // shared extra drop items, these are item queries with Condition https://stardewvalleywiki.com/Modding:Item_queries
+   "{{ModId}}_ExtraMeat2": {
+      "Id": "{{ModId}}_ExtraMeat2",
+      "ItemId": "(O)684"
+    }
+  },
   // same as Varieties, but for dangerous monsters
   "DangerousVarieties": {
     "{{ModId}}_Armored Bug_dangerous/texture_0": {
         "Sprite": "{{ModId}}_Armored Bug_dangerous/texture_0"
     },
-  }
+  },
+  // like SharedExtraDrops but for dangerous monsters
+  "DangerousSharedExtraDrops": {
+   "{{ModId}}_ExtraMeat3": {
+      "Id": "{{ModId}}_ExtraMeat3",
+      "ItemId": "(O)684"
+    }
+  },
 }
 ```
 

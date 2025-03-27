@@ -47,10 +47,6 @@
     },
     {
       "Action": "Include",
-      "FromFile": "data/Frost Bat.json"
-    },
-    {
-      "Action": "Include",
       "FromFile": "data/Ghost.json"
     },
     {
@@ -120,6 +116,18 @@
     {
       "Action": "Include",
       "FromFile": "data/Wilderness Golem.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Frost Bat.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Iridium Bat.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/Lava Bat.json"
     }
   ]
 }

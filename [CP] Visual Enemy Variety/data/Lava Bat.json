@@ -1,0 +1,39 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}_Lava Bat/texture_0,{{ModId}}_Lava Bat/texture_1,{{ModId}}_Lava Bat/texture_2,{{ModId}}_Lava Bat/texture_3,{{ModId}}_Lava Bat/texture_4",
+      "FromFile": "Textures/Lava Bat/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "mushymato.MonsterVariety/Data",
+      "Entries": {
+        "{{ModId}}_Lava Bat": {
+          "Id": "{{ModId}}_Lava Bat",
+          "MonsterName": "Lava Bat",
+          "Varieties": {
+            "{{ModId}}_Lava Bat/texture_0": {
+              "Sprite": "{{ModId}}_Lava Bat/texture_0"
+            },
+            "{{ModId}}_Lava Bat/texture_1": {
+              "Sprite": "{{ModId}}_Lava Bat/texture_1"
+            },
+            "{{ModId}}_Lava Bat/texture_2": {
+              "Sprite": "{{ModId}}_Lava Bat/texture_2"
+            },
+            "{{ModId}}_Lava Bat/texture_3": {
+              "Sprite": "{{ModId}}_Lava Bat/texture_3"
+            },
+            "{{ModId}}_Lava Bat/texture_4": {
+              "Sprite": "{{ModId}}_Lava Bat/texture_4"
+            },
+            "Default": {
+              "Sprite": "Characters/Monsters/Lava Bat"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
