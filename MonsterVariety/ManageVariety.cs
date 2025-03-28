@@ -101,10 +101,21 @@ internal static class ManageVariety
     private static void ApplyMonsterVariety(Monster monster)
     {
         Type type = monster.GetType();
+        string monsterName = monster.Name;
+        // special case Armored Bug & Assassin Bug
+        if (monster is Bug bug && bug.isArmoredBug.Value)
+        {
+            monsterName = "Armored Bug";
+        }
+        else if (monster.Sprite?.textureName?.Value == "Characters\\Monsters\\Assassin Bug")
+        {
+            monsterName = "Assassin Bug";
+        }
+
         ModEntry.LogOnce(
-            $"Try ApplyMonsterVariety on '{monster.Name}' ({type.Namespace} : {type.Name} '{monster.Sprite?.textureName?.Value}')"
+            $"Try ApplyMonsterVariety on '{monsterName}' ({type.Namespace} : {type.Name} '{monster.Sprite?.textureName?.Value}' HardMode:{monster.isHardModeMonster.Value})"
         );
-        if (!AssetManager.VarietyData.TryGetValue(monster.Name, out MonsterVarietyData? data))
+        if (!AssetManager.VarietyData.TryGetValue(monsterName, out MonsterVarietyData? data))
         {
             // special case Green Slime
             if (monster is not GreenSlime || !AssetManager.VarietyData.TryGetValue("Green Slime", out data))
@@ -120,7 +131,7 @@ internal static class ManageVariety
             Dictionary<string, VarietyData> varieties;
             GameStateQueryContext gameStateQueryContext = new(monster.currentLocation, Game1.player, null, null, null);
             ItemQueryContext itemQueryContext =
-                new(monster.currentLocation, Game1.player, null, $"{ModEntry.ModId}:{monster.Name}");
+                new(monster.currentLocation, Game1.player, null, $"{ModEntry.ModId}:{monsterName}");
             if (monster.isHardModeMonster.Value)
             {
                 varieties = data.DangerousVarieties.Count > 0 ? data.DangerousVarieties : data.Varieties;

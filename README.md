@@ -66,3 +66,9 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
 ```
 
 `mushymato.MonsterVariety/Data` is actually a list, two mods adding varieties to the same monster will appear as 2 different entries so as long as they use unique id. These entries will be merged before used to check what variants should apply.
+
+## Special Cases
+
+- `Armored Bug` is the MonsterName used for armored bugs in the skull cavern
+- `Assassin Bug` is the MonsterName used for assassin bugs in desert festival
+- Slime enemies will fall back to `Green Slime`, if a less specific entry could not be found
