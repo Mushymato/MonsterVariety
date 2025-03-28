@@ -121,9 +121,9 @@ internal static class ManageVariety
             GameStateQueryContext gameStateQueryContext = new(monster.currentLocation, Game1.player, null, null, null);
             ItemQueryContext itemQueryContext =
                 new(monster.currentLocation, Game1.player, null, $"{ModEntry.ModId}:{monster.Name}");
-            if (monster.isHardModeMonster.Value && data.DangerousVarieties.Count > 0)
+            if (monster.isHardModeMonster.Value)
             {
-                varieties = data.DangerousVarieties;
+                varieties = data.DangerousVarieties.Count > 0 ? data.DangerousVarieties : data.Varieties;
                 AddExtraDrops(monster, data.DangerousSharedExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
             }
             else
