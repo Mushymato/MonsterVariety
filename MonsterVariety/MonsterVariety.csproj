@@ -1,4 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <SDV>1616</SDV>
+  </PropertyGroup>
   <Import Project="$(MSBuildUserExtensionsPath)/sdv.props"
     Condition="Exists('$(MSBuildUserExtensionsPath)/sdv.props')" />
 

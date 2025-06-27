@@ -92,7 +92,11 @@ internal static class ManageVariety
             {
                 if (res.Item is Item item)
                 {
+#if SDV1615
                     monster.objectsToDrop.Add(item.QualifiedItemId);
+#else
+                    monster.drops.Add(item);
+#endif
                 }
             }
         }
