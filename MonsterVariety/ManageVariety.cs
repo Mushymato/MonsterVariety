@@ -156,10 +156,13 @@ internal static class ManageVariety
                 List<VarietyData> validVarietyList = validVariety
                     .Where(variety => variety.Precedence == minPrecedence)
                     .ToList();
-                var chosenVariety = validVarietyList[Random.Shared.Next(validVarietyList.Count)];
-                textureName = chosenVariety.Sprite!;
-                monster.modData[ModData_AppliedVariety] = textureName;
-                AddExtraDrops(monster, chosenVariety.ExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
+                if (validVarietyList.Any())
+                {
+                    var chosenVariety = validVarietyList[Random.Shared.Next(validVarietyList.Count)];
+                    textureName = chosenVariety.Sprite!;
+                    monster.modData[ModData_AppliedVariety] = textureName;
+                    AddExtraDrops(monster, chosenVariety.ExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
+                }
             }
             else
             {
