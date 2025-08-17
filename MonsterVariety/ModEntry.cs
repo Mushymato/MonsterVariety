@@ -10,14 +10,13 @@ public class ModEntry : Mod
     private const LogLevel DEFAULT_LOG_LEVEL = LogLevel.Trace;
 #endif
     private static IMonitor? mon;
-    internal static string ModId { get; private set; } = null!;
+    internal const string ModId = "mushymato.MonsterVariety";
 
     internal static HashSet<string>? VanillaCharacterMonster;
 
     public override void Entry(IModHelper helper)
     {
         mon = Monitor;
-        ModId = ModManifest.UniqueID;
         AssetManager.Register(helper);
         ManageVariety.Apply(helper);
         VanillaCharacterMonster = helper.Data.ReadJsonFile<HashSet<string>>("assets/vanilla_character_monsters.json");

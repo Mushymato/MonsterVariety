@@ -12,7 +12,7 @@ namespace MonsterVariety;
 
 internal static class ManageVariety
 {
-    internal static string ModData_AppliedVariety => $"{ModEntry.ModId}/HasAppliedVariety";
+    internal static string ModData_AppliedVariety = $"{ModEntry.ModId}/HasAppliedVariety";
 
     internal static void Apply(IModHelper helper)
     {
