@@ -147,31 +147,32 @@ internal static class ManageVariety
                 AddExtraDrops(monster, data.SharedExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
             }
 
-            IEnumerable<VarietyData> validVariety = varieties.Values.Where(variety =>
-                IsValidVariety(monster, variety, onlyAlwaysOverride)
-            );
-            if (validVariety.Any())
+            List<VarietyData> validVariety = varieties
+                .Values.Where(variety => IsValidVariety(monster, variety, onlyAlwaysOverride))
+                .ToList();
+            if (validVariety.Count > 0)
             {
                 int minPrecedence = validVariety.Min(variety => variety.Precedence);
                 List<VarietyData> validVarietyList = validVariety
                     .Where(variety => variety.Precedence == minPrecedence)
                     .ToList();
-                if (validVarietyList.Any())
-                {
-                    var chosenVariety = validVarietyList[Random.Shared.Next(validVarietyList.Count)];
-                    textureName = chosenVariety.Sprite!;
-                    monster.modData[ModData_AppliedVariety] = textureName;
-                    AddExtraDrops(monster, chosenVariety.ExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
-                }
+                var chosenVariety = Random.Shared.ChooseFrom(validVarietyList);
+                textureName = chosenVariety.Sprite!;
+                monster.modData[ModData_AppliedVariety] = textureName;
+                AddExtraDrops(monster, chosenVariety.ExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
             }
             else
             {
                 return;
             }
         }
-        if (monster.Sprite == null)
-            monster.Sprite = new AnimatedSprite(textureName);
-        else
-            monster.Sprite.textureName.Value = textureName;
+
+        if (monster.Sprite?.textureName.Value != textureName)
+        {
+            if (monster.Sprite == null)
+                monster.Sprite = new AnimatedSprite(textureName);
+            else
+                monster.Sprite.textureName.Value = textureName;
+        }
     }
 }
