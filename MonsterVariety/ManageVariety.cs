@@ -56,7 +56,12 @@ internal static class ManageVariety
             && (ModEntry.VanillaCharacterMonster?.Contains(nameParts[2].ToLower()) ?? false);
     }
 
-    private static bool IsValidVariety(Monster monster, VarietyData variety, bool onlyAlwaysOverride)
+    private static bool IsValidVariety(
+        Monster monster,
+        VarietyData variety,
+        bool onlyAlwaysOverride,
+        GameStateQueryContext gameStateQueryContext
+    )
     {
         if (onlyAlwaysOverride && !variety.AlwaysOverride)
             return false;
@@ -64,12 +69,9 @@ internal static class ManageVariety
             return false;
         if (!Game1.content.DoesAssetExist<Texture2D>(variety.Sprite))
             return false;
-        if (variety.Season != null && variety.Season != monster.currentLocation.GetSeason())
+        if (variety.Season != null && variety.Season != Game1.GetSeasonForLocation(monster.currentLocation))
             return false;
-        if (
-            variety.Condition != null
-            && !GameStateQuery.CheckConditions(variety.Condition, location: monster.currentLocation)
-        )
+        if (variety.Condition != null && !GameStateQuery.CheckConditions(variety.Condition, gameStateQueryContext))
             return false;
         return true;
     }
@@ -148,7 +150,7 @@ internal static class ManageVariety
             }
 
             List<VarietyData> validVariety = varieties
-                .Values.Where(variety => IsValidVariety(monster, variety, onlyAlwaysOverride))
+                .Values.Where(variety => IsValidVariety(monster, variety, onlyAlwaysOverride, gameStateQueryContext))
                 .ToList();
             if (validVariety.Count > 0)
             {
