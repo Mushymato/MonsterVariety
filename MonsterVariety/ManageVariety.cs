@@ -12,7 +12,7 @@ namespace MonsterVariety;
 
 internal static class ManageVariety
 {
-    internal static string ModData_AppliedVariety = $"{ModEntry.ModId}/HasAppliedVariety";
+    internal const string ModData_AppliedVariety = $"{ModEntry.ModId}/HasAppliedVariety";
 
     internal static void Apply(IModHelper helper)
     {
@@ -94,10 +94,10 @@ internal static class ManageVariety
             {
                 if (res.Item is Item item)
                 {
-#if SDV1615
-                    monster.objectsToDrop.Add(item.QualifiedItemId);
-#else
+#if SDV17
                     monster.drops.Add(item);
+#else
+                    monster.objectsToDrop.Add(item.QualifiedItemId);
 #endif
                 }
             }
@@ -162,6 +162,10 @@ internal static class ManageVariety
                 textureName = chosenVariety.Sprite!;
                 monster.modData[ModData_AppliedVariety] = textureName;
                 AddExtraDrops(monster, chosenVariety.ExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
+                if (!string.IsNullOrEmpty(chosenVariety.HUDNotif))
+                {
+                    Game1.addHUDMessage(new HUDMessage(chosenVariety.HUDNotif));
+                }
             }
             else
             {

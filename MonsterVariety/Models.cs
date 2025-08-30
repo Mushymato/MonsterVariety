@@ -17,6 +17,8 @@ internal sealed class VarietyData
 
     public int Precedence { get; set; } = 0;
 
+    public string? HUDNotif { get; set; } = null;
+
     public Dictionary<string, GenericSpawnItemDataWithCondition>? ExtraDrops { get; set; } = null;
 }
 
