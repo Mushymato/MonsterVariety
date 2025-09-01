@@ -164,7 +164,17 @@ internal static class ManageVariety
                 AddExtraDrops(monster, chosenVariety.ExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
                 if (!string.IsNullOrEmpty(chosenVariety.HUDNotif))
                 {
-                    Game1.addHUDMessage(new HUDMessage(chosenVariety.HUDNotif));
+                    if (
+                        !string.IsNullOrEmpty(chosenVariety.HUDNotifIconItem)
+                        && ItemRegistry.Create(chosenVariety.HUDNotifIconItem) is Item icon
+                    )
+                    {
+                        Game1.addHUDMessage(new HUDMessage(chosenVariety.HUDNotif) { messageSubject = icon });
+                    }
+                    else
+                    {
+                        Game1.addHUDMessage(HUDMessage.ForCornerTextbox(chosenVariety.HUDNotif));
+                    }
                 }
             }
             else

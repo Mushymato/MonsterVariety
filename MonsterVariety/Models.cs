@@ -19,6 +19,8 @@ internal sealed class VarietyData
 
     public string? HUDNotif { get; set; } = null;
 
+    public string? HUDNotifIconItem { get; set; } = null;
+
     public Dictionary<string, GenericSpawnItemDataWithCondition>? ExtraDrops { get; set; } = null;
 }
 
