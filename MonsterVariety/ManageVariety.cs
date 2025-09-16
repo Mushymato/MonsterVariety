@@ -97,7 +97,8 @@ internal static class ManageVariety
 #if SDV17
                     monster.drops.Add(item);
 #else
-                    monster.objectsToDrop.Add(item.QualifiedItemId);
+                    for (int i = 0; i < item.Stack; i++)
+                        monster.objectsToDrop.Add(item.QualifiedItemId);
 #endif
                 }
             }
