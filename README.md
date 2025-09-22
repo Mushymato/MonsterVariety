@@ -74,3 +74,13 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
 - `Armored Bug` is the MonsterName used for armored bugs in the skull cavern
 - `Assassin Bug` is the MonsterName used for assassin bugs in desert festival
 - Slime enemies will fall back to `Green Slime`, if a less specific entry could not be found
+
+## Game State Queries
+
+Monster Variety adds the following game state queries for use in it's Condition (or anywhere else)
+
+### `mushymato.MonsterVariety_LUCKY_RANDOM <Rate> [optional @ modifiers]`
+### `mushymato.MonsterVariety_SYNCED_LUCKY_RANDOM <Interval> <Key> <Rate> [optional @ modifiers]`
+
+These are quite similar to `RANDOM` and `SYNCED_RANDOM` but in addition to `@addDailyLuck`, you can also use `@addPlayerLuck [ratio]` to add some multiple of player luck level to the calculation.
+

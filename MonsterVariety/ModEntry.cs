@@ -54,7 +54,6 @@ public class ModEntry : Mod
             value += Game1.player.DailyLuck;
         }
         value += addPlayerLuck / 100 * Game1.player.LuckLevel;
-        Log($"LUCKY: {value}");
         return random.NextDouble() < (double)value;
     }
 
@@ -74,7 +73,7 @@ public class ModEntry : Mod
             Log(error, LogLevel.Error);
             return false;
         }
-        return RandomImpl(random, query, 1);
+        return RandomImpl(random, query, 2);
     }
 
     /// <summary>SMAPI static monitor Log wrapper</summary>
