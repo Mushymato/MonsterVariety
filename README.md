@@ -26,6 +26,8 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
       "Condition": null, // Game State Query
       "Season": null, // Current season, respects the location
       "Precedence": 0, // Order to check in, lower is earlier
+      "HUDNotif": "Message Here", // Optional HUD notif message that will appear when this variety appears
+      "HUDNotifIconItem": "(O)QualifiedItemId", // Optional item icon to use for HUD notif message
       "ExtraDrops": {
         // extra drop items, these are item queries with Condition https://stardewvalleywiki.com/Modding:Item_queries
         "{{ModId}}_ExtraMeat1": {

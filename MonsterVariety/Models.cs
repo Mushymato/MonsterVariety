@@ -60,7 +60,7 @@ internal sealed class MonsterVarietyData
 
 internal sealed class AssetManager
 {
-    internal static string Asset_VarietyData = $"{ModEntry.ModId}/Data";
+    internal const string Asset_VarietyData = $"{ModEntry.ModId}/Data";
     private static List<MonsterVarietyData>? varietyDataRaw = null;
     private static readonly Dictionary<string, MonsterVarietyData> varietyData = [];
     internal static Dictionary<string, MonsterVarietyData> VarietyData

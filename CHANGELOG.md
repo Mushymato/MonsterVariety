@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2025-09-22
+
+### Added
+- New GSQ `mushymato.MonsterVariety_LUCKY_RANDOM` and `mushymato.MonsterVariety_SYNCED_LUCKY_RANDOM`, versions of `RANDOM` and `SYNCED_RANDOM` allowed to use the player's luck buffs
+- New field `HUDNotif` to spawn a HUD message when a specific variety appears in the location
+
+### Fixed
+- NRE on Season check
+- Stacked item drops should drop multiple
+
 ## [0.4.0] - 2025-03-25
 
 ### Added
