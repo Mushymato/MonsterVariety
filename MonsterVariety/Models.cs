@@ -9,11 +9,13 @@ internal sealed class VarietyData
 {
     public bool AlwaysOverride { get; set; } = false;
 
-    public string? Condition { get; set; }
+    public string? Condition { get; set; } = null;
 
-    public Season? Season { get; set; }
+    public Season? Season { get; set; } = null;
 
-    public string? Sprite { get; set; }
+    public string? Sprite { get; set; } = null;
+
+    public string? LightProps { get; set; } = null;
 
     public int Precedence { get; set; } = 0;
 

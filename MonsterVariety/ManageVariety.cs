@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
@@ -13,11 +14,24 @@ namespace MonsterVariety;
 internal static class ManageVariety
 {
     internal const string ModData_AppliedVariety = $"{ModEntry.ModId}/HasAppliedVariety";
+    internal const string ModData_AppliedVarietyLight = $"{ModEntry.ModId}/HasAppliedVarietyLight";
+
+    private static readonly ConditionalWeakTable<Monster, MonsterLightWatcher> monsterLightWatchers = [];
 
     internal static void Apply(IModHelper helper)
     {
+        helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
         helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
         helper.Events.Player.Warped += OnWarped;
+    }
+
+    private static void OnReturnedToTitle(object? sender, ReturnedToTitleEventArgs e)
+    {
+        foreach ((_, MonsterLightWatcher? mlw) in monsterLightWatchers)
+        {
+            mlw?.Deactivate();
+        }
+        monsterLightWatchers.Clear();
     }
 
     private static void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
@@ -159,9 +173,11 @@ internal static class ManageVariety
                 List<VarietyData> validVarietyList = validVariety
                     .Where(variety => variety.Precedence == minPrecedence)
                     .ToList();
-                var chosenVariety = Random.Shared.ChooseFrom(validVarietyList);
+                VarietyData chosenVariety = Random.Shared.ChooseFrom(validVarietyList);
                 textureName = chosenVariety.Sprite!;
                 monster.modData[ModData_AppliedVariety] = textureName;
+                if (chosenVariety.LightProps != null)
+                    monster.modData[ModData_AppliedVarietyLight] = chosenVariety.LightProps;
                 AddExtraDrops(monster, chosenVariety.ExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
                 if (!string.IsNullOrEmpty(chosenVariety.HUDNotif))
                 {
@@ -190,6 +206,12 @@ internal static class ManageVariety
                 monster.Sprite = new AnimatedSprite(textureName);
             else
                 monster.Sprite.textureName.Value = textureName;
+        }
+
+        if (monster.modData.TryGetValue(ModData_AppliedVarietyLight, out string lightProps))
+        {
+            MonsterLightWatcher watcher = monsterLightWatchers.GetValue(monster, MonsterLightWatcher.Create);
+            watcher.Activate(lightProps);
         }
     }
 }
