@@ -21,7 +21,8 @@ internal static class ManageVariety
     internal static void Apply(IModHelper helper)
     {
         helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
-        helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
+        helper.Events.GameLoop.DayStarted += OnDayStarted;
+        helper.Events.GameLoop.DayEnding += OnDayEnding;
         helper.Events.Player.Warped += OnWarped;
     }
 
@@ -34,22 +35,48 @@ internal static class ManageVariety
         monsterLightWatchers.Clear();
     }
 
-    private static void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
+    private static void OnDayStarted(object? sender, DayStartedEventArgs e)
     {
-        foreach (NPC npc in Game1.currentLocation.characters)
-            OnMonsterAdded(npc);
-        Game1.currentLocation.characters.OnValueAdded += OnMonsterAdded;
+        SetupLocation(Game1.currentLocation);
+    }
+
+    private static void OnDayEnding(object? sender, DayEndingEventArgs e)
+    {
+        TeardownLocation(Game1.currentLocation);
     }
 
     private static void OnWarped(object? sender, WarpedEventArgs e)
     {
-        if (e.OldLocation != null)
-            e.OldLocation.characters.OnValueAdded -= OnMonsterAdded;
-        if (e.NewLocation != null)
+        TeardownLocation(e.OldLocation);
+        SetupLocation(e.NewLocation);
+    }
+
+    private static void TeardownLocation(GameLocation location)
+    {
+        if (location == null)
+            return;
+        ModEntry.Log($"TEARDOWN {location.NameOrUniqueName}");
+        location.characters.OnValueAdded -= OnMonsterAdded;
+        location.characters.OnValueRemoved -= OnMonsterRemoved;
+    }
+
+    private static void SetupLocation(GameLocation location)
+    {
+        if (location == null)
+            return;
+        ModEntry.Log($"SETUP {location.NameOrUniqueName}");
+        foreach (NPC npc in location.characters)
+            OnMonsterAdded(npc);
+        location.characters.OnValueAdded += OnMonsterAdded;
+        location.characters.OnValueRemoved += OnMonsterRemoved;
+    }
+
+    private static void OnMonsterRemoved(NPC value)
+    {
+        if (value is Monster monster && monsterLightWatchers.TryGetValue(monster, out MonsterLightWatcher? mlw))
         {
-            foreach (NPC npc in e.NewLocation.characters)
-                OnMonsterAdded(npc);
-            e.NewLocation.characters.OnValueAdded += OnMonsterAdded;
+            mlw.Deactivate();
+            monsterLightWatchers.Remove(monster);
         }
     }
 
