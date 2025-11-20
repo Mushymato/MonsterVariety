@@ -5,9 +5,24 @@ using StardewValley.GameData;
 
 namespace MonsterVariety;
 
-internal sealed class VarietyData
+public sealed class AlwaysOverrideMode
 {
-    public bool AlwaysOverride { get; set; } = false;
+    public bool CustomMonsterClass { get; set; } = false;
+    public bool CustomTextures { get; set; } = false;
+    public string? SpecificTextureName { get; set; } = null;
+
+    public static implicit operator AlwaysOverrideMode(bool value) =>
+        new()
+        {
+            CustomMonsterClass = value,
+            CustomTextures = value,
+            SpecificTextureName = null,
+        };
+}
+
+public sealed class VarietyData
+{
+    public AlwaysOverrideMode AlwaysOverride { get; set; } = false;
 
     public string? Condition { get; set; } = null;
 
@@ -26,7 +41,7 @@ internal sealed class VarietyData
     public Dictionary<string, GenericSpawnItemDataWithCondition>? ExtraDrops { get; set; } = null;
 }
 
-internal sealed class MonsterVarietyData
+public sealed class MonsterVarietyData
 {
     public string? Id { get; set; } = null;
     public string? MonsterName { get; set; } = null;

@@ -26,6 +26,15 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
       "Condition": null, // Game State Query
       "Season": null, // Current season, respects the location
       "Precedence": 0, // Order to check in, lower is earlier
+      "AlwaysOverride": {
+        // Control how textures can override forcifully
+        // Besides specifying every field you can also put:
+        // - "AlwaysOverride": false (equal to { "CustomMonsterClass": false, "CustomTextures": false, "SpecificTextureName": null })
+        // - "AlwaysOverride": true (equal to { "CustomMonsterClass": true, "CustomTextures": true, "SpecificTextureName": null })
+        "CustomMonsterClass": false, // Normally only monsters from namespace StardewValley.Monsters get variety, having 'true' here causes custom monster class to be overriden as well
+        "CustomTextures": false, // Normally only vanilla textures (a hardcoded list) get variety, having 'true' here causes custom textures to be overriden as well.
+        "SpecificTextureName": null // Only override if the current texture name is this value, check monster texture names with lookup anything.
+      },
       "HUDNotif": "Message Here", // Optional HUD notif message that will appear when this variety appears
       "HUDNotifIconItem": "(O)QualifiedItemId", // Optional item icon to use for HUD notif message
       "LightProps": "5 Red", // Optional light source to attach, format is "Radius" or "Radius Color"
@@ -78,10 +87,23 @@ Target `mushymato.MonsterVariety/Data` and add an entry like this:
 
 ## Game State Queries
 
-Monster Variety adds the following game state queries for use in it's Condition (or anywhere else)
+Monster Variety adds the following game state queries for use in it's `Condition` fields (or anywhere else that accepts game state queries).
 
 ### `mushymato.MonsterVariety_LUCKY_RANDOM <Rate> [optional @ modifiers]`
 ### `mushymato.MonsterVariety_SYNCED_LUCKY_RANDOM <Interval> <Key> <Rate> [optional @ modifiers]`
 
 These are quite similar to `RANDOM` and `SYNCED_RANDOM` but in addition to `@addDailyLuck`, you can also use `@addPlayerLuck [ratio]` to add some multiple of player luck level to the calculation.
 
+The number in `[ratio]` is a percentage, i.e. if you put 75 then player luck level will be multiplied by 0.75 which is 75%.
+
+To have this be interpreted as is, write the number as `.75` where `.` is the first character and the multplier will be exactly `.75`.
+
+## Item Queries
+
+Monster Variety adds the following item queries for use in it's `ExtraDrops` fields (or anywhere else that accepts item queries).
+
+### `mushymato.MonsterVariety_MONSTER_DROPS <monsterId> [dropRateMult]`
+
+Return the drop items of a particular monster as defined in `Data/Monsters`, optionally with the drop rates multiplied by a flat rate.
+
+When multiplier is -1, the drop rate check is skipped and all items will be returned unconditionally. Otherwise it's possible for this query to return no items.

@@ -100,11 +100,19 @@ internal static class ManageVariety
     private static bool IsValidVariety(
         Monster monster,
         VarietyData variety,
-        bool onlyAlwaysOverride,
+        bool isCustomMonsterClass,
+        bool isCustomTexture,
         GameStateQueryContext gameStateQueryContext
     )
     {
-        if (onlyAlwaysOverride && !variety.AlwaysOverride)
+        if (!variety.AlwaysOverride.CustomMonsterClass && isCustomMonsterClass)
+            return false;
+        if (!variety.AlwaysOverride.CustomTextures && isCustomTexture)
+            return false;
+        if (
+            monster.Sprite?.textureName?.Value is string currTextureName
+            && (variety.AlwaysOverride.SpecificTextureName?.EqualsIgnoreCase(currTextureName ?? string.Empty) ?? false)
+        )
             return false;
         if (variety.Sprite == null)
             return false;
@@ -148,9 +156,9 @@ internal static class ManageVariety
 
     private static void ApplyMonsterVariety(Monster monster)
     {
-        Type type = monster.GetType();
+        Type monsterType = monster.GetType();
         string monsterName = monster.Name;
-        // special case Armored Bug & Assassin Bug
+        // special case Armored Bug & Assassin Bug sigh
         if (monster is Bug bug && bug.isArmoredBug.Value)
         {
             monsterName = "Armored Bug";
@@ -161,7 +169,7 @@ internal static class ManageVariety
         }
 
         ModEntry.LogOnce(
-            $"Try ApplyMonsterVariety on '{monsterName}' ({type.Namespace} : {type.Name} '{monster.Sprite?.textureName?.Value}' HardMode:{monster.isHardModeMonster.Value})"
+            $"Try ApplyMonsterVariety on '{monsterName}' ({monsterType.Namespace} : {monsterType.Name} '{monster.Sprite?.textureName?.Value}' HardMode:{monster.isHardModeMonster.Value})"
         );
         if (!AssetManager.VarietyData.TryGetValue(monsterName, out MonsterVarietyData? data))
         {
@@ -174,12 +182,14 @@ internal static class ManageVariety
 
         if (!monster.modData.TryGetValue(ModData_AppliedVariety, out string textureName))
         {
-            bool onlyAlwaysOverride =
-                type.Namespace != "StardewValley.Monsters" || !IsVanillaSprite(monster.Sprite?.textureName?.Value);
             Dictionary<string, VarietyData> varieties;
             GameStateQueryContext gameStateQueryContext = new(monster.currentLocation, Game1.player, null, null, null);
-            ItemQueryContext itemQueryContext =
-                new(monster.currentLocation, Game1.player, null, $"{ModEntry.ModId}:{monsterName}");
+            ItemQueryContext itemQueryContext = new(
+                monster.currentLocation,
+                Game1.player,
+                null,
+                $"{ModEntry.ModId}:{monsterName}"
+            );
             if (monster.isHardModeMonster.Value)
             {
                 varieties = data.DangerousVarieties.Count > 0 ? data.DangerousVarieties : data.Varieties;
@@ -191,8 +201,12 @@ internal static class ManageVariety
                 AddExtraDrops(monster, data.SharedExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
             }
 
+            bool isCustomMonsterClass = monsterType.Namespace != "StardewValley.Monsters";
+            bool isCustomTexture = IsVanillaSprite(monster.Sprite?.textureName?.Value);
             List<VarietyData> validVariety = varieties
-                .Values.Where(variety => IsValidVariety(monster, variety, onlyAlwaysOverride, gameStateQueryContext))
+                .Values.Where(variety =>
+                    IsValidVariety(monster, variety, isCustomMonsterClass, isCustomTexture, gameStateQueryContext)
+                )
                 .ToList();
             if (validVariety.Count > 0)
             {
