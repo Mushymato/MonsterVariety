@@ -202,7 +202,7 @@ internal static class ManageVariety
             }
 
             bool isCustomMonsterClass = monsterType.Namespace != "StardewValley.Monsters";
-            bool isCustomTexture = IsVanillaSprite(monster.Sprite?.textureName?.Value);
+            bool isCustomTexture = !IsVanillaSprite(monster.Sprite?.textureName?.Value);
             List<VarietyData> validVariety = varieties
                 .Values.Where(variety =>
                     IsValidVariety(monster, variety, isCustomMonsterClass, isCustomTexture, gameStateQueryContext)
@@ -241,12 +241,10 @@ internal static class ManageVariety
             }
         }
 
-        if (monster.Sprite?.textureName.Value != textureName)
+        monster.Sprite ??= new AnimatedSprite(textureName);
+        if (monster.Sprite.textureName.Value != textureName)
         {
-            if (monster.Sprite == null)
-                monster.Sprite = new AnimatedSprite(textureName);
-            else
-                monster.Sprite.textureName.Value = textureName;
+            monster.Sprite.textureName.Value = textureName;
         }
 
         if (monster.modData.TryGetValue(ModData_AppliedVarietyLight, out string lightProps))

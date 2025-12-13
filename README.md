@@ -4,7 +4,7 @@ Framework mod, allow modders to reskin monsters.
 
 Made this because AT is failing to cover a few edge-cases.
 
-Note: `[CP] Visual Monster Variety` lacks the actual assets since they don't belong to me. Please see mod of same name on nexus.
+Note: `[CP] Visual Monster Variety` lacks the actual assets since they don't belong to me. Please visual enemy variety on nexus.
 
 ## Model
 
