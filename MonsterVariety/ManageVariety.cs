@@ -192,7 +192,7 @@ internal static class ManageVariety
             );
             if (monster.isHardModeMonster.Value)
             {
-                varieties = data.DangerousVarieties.Count > 0 ? data.DangerousVarieties : data.Varieties;
+                varieties = data.DangerousVarieties;
                 AddExtraDrops(monster, data.DangerousSharedExtraDrops?.Values, gameStateQueryContext, itemQueryContext);
             }
             else

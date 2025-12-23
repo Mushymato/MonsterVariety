@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - New item query `mushymato.MonsterVariety_MONSTER_DROPS`
 - `AlwaysOverride` is now a model that individually controls custom monster class / custom texture checking. Previous bool values still accepted.
 
+### Changed
+- Dangerous monsters no longer default to normal varieties.
+
 ## [0.6.0] - 2025-09-28
 
 ### Added
