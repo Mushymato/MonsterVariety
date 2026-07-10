@@ -2,6 +2,7 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.GameData;
+using StardewValley.Monsters;
 
 namespace MonsterVariety;
 
@@ -18,6 +19,47 @@ public sealed class AlwaysOverrideMode
             CustomTextures = value,
             SpecificTextureName = null,
         };
+}
+
+public sealed class VarietyMonsterInfoOverride
+{
+    public string? DisplayName { get; set; }
+    public int? Health { get; set; }
+    public int? DamageToFarmer { get; set; }
+    public bool? IsGlider { get; set; }
+    public int? Resilience { get; set; }
+    public double? Jitteriness { get; set; }
+    public int? MoveTowardPlayerThreshold { get; set; }
+    public int? Speed { get; set; }
+    public double? MissChance { get; set; }
+    public int? ExperienceGained { get; set; }
+
+    internal void Apply(Monster monster)
+    {
+        monster.displayName = DisplayName ?? monster.displayName;
+        if (Health.HasValue)
+        {
+            float priorHealthRatio = (float)monster.Health / monster.MaxHealth;
+            monster.MaxHealth = Health.Value;
+            monster.Health = (int)MathF.Ceiling(priorHealthRatio * Health.Value);
+        }
+        if (DamageToFarmer.HasValue)
+            monster.DamageToFarmer = DamageToFarmer.Value;
+        if (IsGlider.HasValue)
+            monster.isGlider.Value = IsGlider.Value;
+        if (Resilience.HasValue)
+            monster.resilience.Value = Resilience.Value;
+        if (Jitteriness.HasValue)
+            monster.jitteriness.Value = Jitteriness.Value;
+        if (MoveTowardPlayerThreshold.HasValue)
+            monster.moveTowardPlayer(MoveTowardPlayerThreshold.Value);
+        if (Speed.HasValue)
+            monster.Speed = Speed.Value;
+        if (MissChance.HasValue)
+            monster.missChance.Value = MissChance.Value;
+        if (ExperienceGained.HasValue)
+            monster.ExperienceGained = ExperienceGained.Value;
+    }
 }
 
 public sealed class VarietyData
@@ -37,12 +79,12 @@ public sealed class VarietyData
     public string? HUDNotif { get; set; } = null;
 
     public string? HUDNotifIconItem { get; set; } = null;
-    
-    public Dictionary<string, object?>? Fields { get; set; } = null;
-    
-    public List<string>? ExcludeDrops { get; set; } = null;
+
+    public VarietyMonsterInfoOverride? InfoOverrides { get; set; } = null;
 
     public Dictionary<string, GenericSpawnItemDataWithCondition>? ExtraDrops { get; set; } = null;
+
+    public List<string>? ExcludeDrops { get; set; } = null;
 }
 
 public sealed class MonsterVarietyData

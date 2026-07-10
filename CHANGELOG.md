@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0] - 2026-07-09
+
+### Added
+- New field `InfoOverrides` which allows overriding various stats of the monster ([PR#1 by SoulSilverJD](https://github.com/Mushymato/MonsterVariety/pull/1) with modifications).
+- New field `ExcludeDrops` which allows removing certain drops from the monster ([PR#1 by SoulSilverJD](https://github.com/Mushymato/MonsterVariety/pull/1) with modifications).
+
 ## [0.7.3] - 2026-03-21
 
 ### Fixed

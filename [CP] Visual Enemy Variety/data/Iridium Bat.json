@@ -14,7 +14,14 @@
           "MonsterName": "Iridium Bat",
           "Varieties": {
             "{{ModId}}_Iridium Bat/texture_0": {
-              "Sprite": "{{ModId}}_Iridium Bat/texture_0"
+              "Sprite": "{{ModId}}_Iridium Bat/texture_0",
+              "ExcludeDrops": [
+                "(O)386"
+              ],
+              "InfoOverrides": {
+                "DisplayName": "Speshul Bat",
+                "Health": 1000
+              }
             },
             "{{ModId}}_Iridium Bat/texture_1": {
               "Sprite": "{{ModId}}_Iridium Bat/texture_1"
